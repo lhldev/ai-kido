@@ -3,89 +3,375 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI-kido — an AI scam awareness workshop for students." />
+  <meta name="description" content="AI-kido — a free AI scam-awareness workshop for Malaysian secondary school students, with a tabletop detective game." />
+  <meta name="theme-color" content="#F7F3EA" />
+  <meta property="og:title" content="AI-kido · AI Scam Awareness Workshop" />
+  <meta property="og:description" content="Learn how AI makes scams convincing — then investigate a fictional case like a detective." />
+  <meta property="og:type" content="website" />
   <title>AI-kido · AI Scam Awareness Workshop</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314110F'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='monospace' font-size='12' fill='%23F7F3EA'%3EAI%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <a class="brand" href="/">
-      <span class="brand-mark">AI</span>
-      <span>AI-kido</span>
-    </a>
-    <nav class="site-nav">
-      <a href="#learn">Learn</a>
-      <a href="#game">Game</a>
-      <a href="#about">About</a>
-    </nav>
+    <div class="shell header-inner">
+      <a class="wordmark" href="/" aria-label="AI-kido, home">
+        <span class="wordmark-mark" aria-hidden="true">AI</span>
+        <span class="wordmark-text">AI-kido</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#learn">Learn</a>
+        <a href="#game">Game</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">AI Scam Awareness Workshop</p>
-      <h1>Spot the scam before it spots you.</h1>
-      <p class="lead">
-        A hands-on workshop that teaches students how AI is used in modern scams —
-        and how to investigate suspicious messages like a detective.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#learn">Start learning</a>
-        <a class="btn" href="#game">Try the game</a>
-      </div>
-    </section>
+  <main id="main">
+    <div class="shell">
 
-    <section id="learn" class="section">
-      <div class="section-head">
-        <h2>Learn</h2>
-        <p>Core cybersecurity concepts, short and practical.</p>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <h3>Phishing</h3>
-          <p>Urgent requests, mismatched links, and pressure tactics to watch for.</p>
-          <span class="tag">Module 1</span>
-        </article>
-        <article class="card">
-          <h3>AI Impersonation</h3>
-          <p>Cloned voices and deepfakes — how to verify who you are really talking to.</p>
-          <span class="tag">Module 2</span>
-        </article>
-        <article class="card">
-          <h3>Fake Job Offers</h3>
-          <p>Too-good-to-be-true offers, upfront payments, and data harvesting.</p>
-          <span class="tag">Module 3</span>
-        </article>
-      </div>
-    </section>
+      <!-- HERO ============================================================ -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="layout">
+          <div class="rail">
+            <p class="rail-label">01 / Exhibit A</p>
+            <p class="rail-note">A composite example. The names, numbers and domains are invented.</p>
+          </div>
 
-    <section id="game" class="section">
-      <div class="section-head">
-        <h2>The Investigation</h2>
-        <p>A tabletop detective game. Work in groups, analyse fictional cases, find the clues.</p>
-      </div>
-      <div class="panel">
-        <p class="panel-status">Coming soon</p>
-        <h3>Case file #001</h3>
-        <p>The interactive game will live here. For now this is your starting point.</p>
-        <a class="btn btn-primary" href="#about">Learn more</a>
-      </div>
-    </section>
+          <div class="content">
+            <div class="hero-grid">
+              <div class="hero-copy">
+                <p class="kicker">AI scam awareness workshop · Malaysia</p>
+                <h1 id="hero-title">Spot the scam before it spots you.</h1>
+                <p class="lead">A hands-on workshop for secondary school students. Learn how AI makes a scam cheaper to run and harder to spot — then investigate a suspicious message the way a detective would.</p>
+                <div class="actions">
+                  <a class="btn btn--solid" href="#learn">Start with the evidence</a>
+                  <a class="btn" href="#game">Open the case file</a>
+                </div>
+              </div>
 
-    <section id="about" class="section">
-      <div class="section-head">
-        <h2>About</h2>
-        <p>
-          AI-kido is a community workshop for secondary school students, run in
-          partnership with schools outside Universiti Malaya. All materials remain
-          free and accessible after the event.
-        </p>
-      </div>
-    </section>
+              <figure class="exhibit" aria-labelledby="exhibit-caption">
+                <div class="exhibit-card">
+                  <div class="exhibit-head">
+                    <span class="exhibit-tag">Exhibit A</span>
+                    <span class="exhibit-meta">SMS · 02:14</span>
+                  </div>
+
+                  <div class="exhibit-body">
+                    <dl class="msg-meta">
+                      <div>
+                        <dt>From</dt>
+                        <dd><span class="flag" aria-hidden="true">1</span>+60 11-2XX 4471 <span class="msg-note">not in contacts</span></dd>
+                      </div>
+                      <div>
+                        <dt>To</dt>
+                        <dd>This phone</dd>
+                      </div>
+                    </dl>
+
+                    <div class="bubbles">
+                      <p class="bubble"><span class="flag" aria-hidden="true">2</span>URGENT: Bank Maju has suspended your account. <mark>Verify within 30 minutes</mark> or access is permanently blocked.</p>
+                      <p class="bubble bubble--link"><span class="flag" aria-hidden="true">3</span><span class="fake-link">https://bankmaju-secure.net/v?u=8f2</span></p>
+                    </div>
+
+                    <p class="exhibit-foot">Invented exhibit. The link is inert.</p>
+                  </div>
+                </div>
+                <figcaption id="exhibit-caption" class="sr-only">A fictional SMS from an unknown number claiming to be from Bank Maju, demanding verification through a lookalike web address.</figcaption>
+              </figure>
+            </div>
+
+            <div class="flag-strip">
+              <p class="flag-strip-label">Three red flags in Exhibit A</p>
+              <ol class="annotations">
+                <li>
+                  <span class="ann-num" aria-hidden="true">1</span>
+                  <p><strong>Not your bank.</strong> Banks write from a shortcode, not a personal mobile. Even a correct sender name proves nothing — it can be spoofed.</p>
+                </li>
+                <li>
+                  <span class="ann-num" aria-hidden="true">2</span>
+                  <p><strong>A clock, not a reason.</strong> Thirty minutes exists to stop you thinking. Real banks give you days, and never ask you to “verify” through a link.</p>
+                </li>
+                <li>
+                  <span class="ann-num" aria-hidden="true">3</span>
+                  <p><strong>Close, but not the bank.</strong> The real domain ends in <span class="mono">.com.my</span>. Read an address from the last dot backwards.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEARN =========================================================== -->
+      <section id="learn" class="section" aria-labelledby="learn-title">
+        <div class="layout">
+          <div class="rail">
+            <p class="rail-label">02 / Learn</p>
+            <p class="rail-note">Read the specimen first. The tells are easier to see in the evidence than in the advice.</p>
+          </div>
+
+          <div class="content">
+            <header class="section-head">
+              <h2 id="learn-title">Three ways a scam gets in.</h2>
+              <p class="lead">Short modules, built from patterns that repeat across Malaysia. Each one ends with a specimen you can read like evidence.</p>
+            </header>
+
+            <ol class="modules">
+              <li class="module">
+                <p class="module-num" aria-hidden="true">01</p>
+                <div class="module-body">
+                  <p class="module-kicker">The login</p>
+                  <h3>Phishing</h3>
+                  <p class="module-text">A stolen password is still the most common way an account is lost. The message borrows a bank’s colours, copies a login screen and adds a deadline — but the address is never quite right. AI has made the writing cleaner; it has not learned your bank’s real domain.</p>
+
+                  <ol class="flags">
+                    <li>The domain is <mark>a lookalike</mark> — one swapped letter, a hyphen, or <span class="mono">.net</span> instead of <span class="mono">.com.my</span>.</li>
+                    <li>A deadline measured in <mark>minutes, not days</mark>.</li>
+                    <li>You are asked to log in from a link, instead of opening <mark>the app you already have</mark>.</li>
+                  </ol>
+
+                  <p class="takeaway"><span class="takeaway-label">The check</span> Type the address yourself. Never log in from a link.</p>
+
+                  <figure class="specimen">
+                    <pre><code>From: Bank Maju &lt;alert@bankmaju-secure.net&gt;
+Subject: Final notice — account suspension
+
+We detected unusual activity. Verify your identity
+within 30 minutes or your account will be closed.
+
+  https://bankmaju-secure.net/verify
+
+This is an automated message. Do not reply.</code></pre>
+                    <figcaption>Specimen 01 · phishing email · invented</figcaption>
+                  </figure>
+                </div>
+              </li>
+
+              <li class="module module--feature">
+                <p class="module-num" aria-hidden="true">02</p>
+                <div class="module-body">
+                  <div class="module-main">
+                    <p class="module-kicker">The voice</p>
+                    <h3>AI impersonation</h3>
+                    <p class="module-text">Cloning a voice takes a few seconds of audio — a story, a voicemail greeting, a video. Pair it with a new number and a family emergency, and the scam becomes a conversation you believe you are having with someone you trust. Video calls are the same trick with a face.</p>
+
+                    <ol class="flags">
+                      <li>A <mark>new number</mark> claims to be someone you know.</li>
+                      <li>The call cannot be returned, or the caller refuses to be seen.</li>
+                      <li>Money, gift cards or a transfer — urgently, and <mark>“don’t tell anyone yet”</mark>.</li>
+                    </ol>
+
+                    <p class="takeaway"><span class="takeaway-label">The check</span> Hang up. Call back on the number you already have.</p>
+                  </div>
+
+                  <figure class="specimen specimen--feature">
+                    <pre><code>[voice note · 0:11]
+“Mum, I dropped my phone. This is my
+new number. Don’t call the old one.
+I need RM1,500 today. Please don’t
+tell Dad yet.”</code></pre>
+                    <figcaption>Specimen 02 · cloned voice note · invented</figcaption>
+                  </figure>
+                </div>
+              </li>
+
+              <li class="module">
+                <p class="module-num" aria-hidden="true">03</p>
+                <div class="module-body">
+                  <p class="module-kicker">The offer</p>
+                  <h3>Fake job offers</h3>
+                  <p class="module-text">The offer arrives on WhatsApp or Instagram: flexible hours, RM300 a day, no experience needed. The work is liking videos or “verifying orders”. Then the job asks you to pay a fee, or to receive money for someone else. That is the point at which it stops being a job.</p>
+
+                  <ol class="flags">
+                    <li>You are asked to <mark>pay to start work</mark> — a deposit, a training fee, an “activation”.</li>
+                    <li>The employer exists only on a messaging app, with no company name, address or contract.</li>
+                    <li>Your bank account is used to move someone else’s money. That makes you <mark>the mule</mark>.</li>
+                  </ol>
+
+                  <p class="takeaway"><span class="takeaway-label">The check</span> Never pay to start a job. Never lend your account to move money.</p>
+
+                  <figure class="specimen">
+                    <pre><code>[Instagram DM]
+Hi! We need 5 part-time staff. Work from
+home, RM300/day, 2 hours. No experience
+needed. Start today — just pay RM50
+activation. WhatsApp +60 11-2XX 4471
+to begin.</code></pre>
+                    <figcaption>Specimen 03 · job offer message · invented</figcaption>
+                  </figure>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- GAME ============================================================ -->
+      <section id="game" class="section" aria-labelledby="game-title">
+        <div class="layout">
+          <div class="rail">
+            <p class="rail-label">03 / Investigation</p>
+            <p class="rail-note">Case file #001. One message, one morning, one account emptied.</p>
+          </div>
+
+          <div class="content">
+            <header class="section-head">
+              <h2 id="game-title">The Investigation</h2>
+              <p class="lead">A tabletop detective game for groups of four. Each team gets a printed dossier — messages, timestamps, a bank statement, a voice-note transcript — and forty-five minutes to find the indicators of compromise, name the tactic, and say what the victim should have done at minute one.</p>
+            </header>
+
+            <article class="case">
+              <div class="case-head">
+                <p class="case-label">Case file <span class="case-id">#001</span></p>
+                <p class="case-stamp" aria-hidden="true">In development</p>
+              </div>
+
+              <div class="case-intro">
+                <h3>The Midnight Message</h3>
+                <p>A student receives a message at 2:14 a.m. By morning, RM4,800 has left her account. Nothing in the dossier is real; every red flag is.</p>
+              </div>
+
+              <dl class="case-meta">
+                <div>
+                  <dt>Format</dt>
+                  <dd>Tabletop · groups of four</dd>
+                </div>
+                <div>
+                  <dt>Length</dt>
+                  <dd>45–60 minutes</dd>
+                </div>
+                <div>
+                  <dt>Materials</dt>
+                  <dd>Printed dossier</dd>
+                </div>
+              </dl>
+
+              <div class="case-exhibits">
+                <p class="case-subhead">Exhibits in the dossier</p>
+                <ol class="exhibit-list">
+                  <li>
+                    <span class="ex-id">A</span>
+                    <span class="ex-name">SMS thread</span>
+                    <span class="ex-note">Sender, link, deadline</span>
+                  </li>
+                  <li>
+                    <span class="ex-id">B</span>
+                    <span class="ex-name">Voice-note transcript</span>
+                    <span class="ex-note">New number, family emergency</span>
+                  </li>
+                  <li>
+                    <span class="ex-id">C</span>
+                    <span class="ex-name">Job offer</span>
+                    <span class="ex-note">Upfront fee, mule account</span>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="case-foot">
+                <p class="case-status"><span class="status-dot" aria-hidden="true"></span>In development — pilot sessions are being planned with partner schools.</p>
+                <a class="btn btn--solid" href="#about">Read the workshop brief</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT =========================================================== -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="layout">
+          <div class="rail">
+            <p class="rail-label">04 / About</p>
+            <p class="rail-note">Free for schools. No devices required beyond the phones students already carry.</p>
+          </div>
+
+          <div class="content">
+            <header class="section-head">
+              <h2 id="about-title">A workshop built for the classroom.</h2>
+              <p class="lead">One session, no prior technical knowledge, and no cost to the school.</p>
+            </header>
+
+            <div class="about-grid">
+              <div class="about-col">
+                <h3 class="subhead">About</h3>
+                <p>AI-kido is a community workshop for secondary school students in Malaysia, run in partnership with schools outside Universiti Malaya. It was built for the room it is used in: a projector, cheap phones, and a class that has heard “be careful online” too many times to listen again.</p>
+                <p>The session has two halves. First, the three patterns above, taught through the messages themselves. Then the tabletop investigation, where teams apply the same checklist to a fictional case and defend their verdict.</p>
+
+                <h3 class="subhead">Partners</h3>
+                <ul class="partner-list">
+                  <li><span>Universiti Malaya</span><span class="partner-role">Academic partner</span></li>
+                  <li><span>Partner secondary school</span><span class="partner-role">To be announced</span></li>
+                  <li><span>Workshop materials</span><span class="partner-role">Free for schools</span></li>
+                </ul>
+              </div>
+
+              <div class="about-col">
+                <h3 class="subhead">Accessibility</h3>
+                <p>This site is plain HTML, CSS and JavaScript, and stays readable with JavaScript switched off. Body text never drops below 17px, every control has a 44px target, focus is always visible, and motion is limited to colour changes.</p>
+                <p>If any part of this page is hard to use — on a small phone, with a screen reader, in a bright classroom — tell us and we will fix it.</p>
+
+                <h3 class="subhead">If a scam reaches you</h3>
+                <div class="helpline">
+                  <p class="helpline-number">997</p>
+                  <p class="helpline-copy">National Scam Response Centre<br />Available 24 hours</p>
+                </div>
+                <p>Stop replying. Do not click the link. Call 997, and check any account number on <a href="https://semakmule.rmp.gov.my" rel="noopener">Semak Mule</a> before sending money.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLOPHON ======================================================== -->
+      <section id="colophon" class="section colophon" aria-labelledby="colophon-title">
+        <div class="layout">
+          <div class="rail">
+            <p class="rail-label">05 / Colophon</p>
+            <p class="rail-note">Type, assets and provenance — the paper trail for this page.</p>
+          </div>
+
+          <div class="content">
+            <header class="section-head">
+              <h2 id="colophon-title">Colophon</h2>
+            </header>
+
+            <div class="colophon-grid">
+              <div>
+                <h3 class="subhead">Typefaces</h3>
+                <p>Fraunces by Undercase Type, Instrument Sans by Instrument, and JetBrains Mono by JetBrains. All three are licensed under the <a href="https://openfontlicense.org" rel="noopener">SIL Open Font License 1.1</a> and self-hosted here as latin-subset WOFF2 files.</p>
+                <p class="colophon-links">Licence texts:
+                  <a href="/assets/fonts/OFL-fraunces.txt">Fraunces</a>,
+                  <a href="/assets/fonts/OFL-instrumentsans.txt">Instrument Sans</a>,
+                  <a href="/assets/fonts/OFL-jetbrainsmono.txt">JetBrains Mono</a>.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="subhead">Assets</h3>
+                <p>Every scam artifact — message, email, job posting, transcript — is built in HTML and CSS. No screenshots, no stock photography, no generated imagery. Links inside exhibits are inert.</p>
+                <p><strong>No real people are depicted on this site.</strong> All names, numbers, domains and messages are invented.</p>
+              </div>
+
+              <div>
+                <h3 class="subhead">Page</h3>
+                <p>No cookies, no analytics, no third-party requests. Fonts are served from this domain, and the site is delivered as static files on Cloudflare Pages.</p>
+                <p>Set in Fraunces, Instrument Sans and JetBrains Mono. Last updated October 2026.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   </main>
 
   <footer class="site-footer">
-    <p>AI-kido · AI Scam Awareness Workshop</p>
-    <p class="muted">Built for Cloudflare Pages</p>
+    <div class="shell footer-inner">
+      <p class="footer-wordmark">AI-kido</p>
+      <p class="footer-meta">AI scam awareness workshop · Universiti Malaya · 2026</p>
+      <a class="footer-top" href="#main">Back to top</a>
+    </div>
   </footer>
 
   <script src="/assets/app.js" defer></script>
