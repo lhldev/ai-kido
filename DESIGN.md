@@ -113,6 +113,9 @@ quoted, not blend into the lesson text around it.
   the content by a thin hairline leader. The rail is sticky within its section.
 - Section order is fixed: **header → hero → learn → game → about → colophon**,
   followed by a single-line footer.
+- `privacy.html` is a separate route, served at `/privacy`. It reuses the same
+  header, footer, rail, section shell and type scale, so it reads as the same
+  document rather than a bolted-on legal page.
 - Mobile breakpoints: 360 / 768 / 1024 / 1440.
 
 ---
@@ -157,6 +160,15 @@ Font names and their licences, asset provenance, and the line
 keep it accurate. It also records that the site sets no cookies, runs no
 analytics and makes no third-party requests.
 
+### Privacy
+A single legal page at `privacy.html`, served at `/privacy`. A kicker and
+display `h1` sit above a four-item facts strip — cookies, analytics, accounts,
+hosting — then short policy blocks separated by hairlines. No new visual
+language: the block headings are ordinary `h2`s, body copy is the standard
+measure, and provider names link directly to their privacy policies. It must
+stay true to the build: no cookies, no analytics, no browser storage, and the
+only outside party is the host that delivers the files.
+
 ---
 
 ## 6. Components
@@ -166,7 +178,8 @@ analytics and makes no third-party requests.
 numbered marker) · `flag-strip` (hairline footnote beneath the hero) · `specimen`
 (mono quote block with source label) · `exhibit-card` · `case-panel`
 · `case-stamp` (rotated CSS stamp) · `annotation` (margin note + leader line)
-· `partner-list` · `helpline` · `colophon`
+· `partner-list` · `helpline` · `colophon` · `legal-facts` (four-item summary
+strip) · `legal-block` (policy section with hairline rule)
 
 ---
 
@@ -209,9 +222,9 @@ reveals, no parallax, no autoplay. Honour `prefers-reduced-motion`.
 - `aria-label` on icon-only controls
 - Colour never the only signal: red flags also carry a number and a label
 
-**Performance** — no framework, no build step. One CSS file (~23KB raw, under
-5KB gzipped), three woff2 files (128KB), inline SVG favicon, zero image files.
-Deploys statically to Cloudflare Pages as-is.
+**Performance** — no framework, no build step. One CSS file (~25KB raw, ~5KB
+gzipped), three woff2 files (128KB), inline SVG favicon, zero image files.
+Deploys statically to Cloudflare Pages and Netlify as-is.
 
 **Print** — a print stylesheet that drops nav and buttons while keeping rules
 and text. Teachers will print handouts; this is cheap and unusually valuable for
@@ -227,6 +240,8 @@ whitespace, never from elevation.
 
 ```
 index.html
+privacy.html                    # served at /privacy
+netlify.toml                    # publish root, no build command
 assets/
   styles.css                    # single stylesheet, tokens in :root
   app.js                        # smooth scroll + progressive enhancement only
@@ -252,8 +267,9 @@ with JS disabled.
 4. Learn modules
 5. Game panel
 6. About + colophon
-7. Responsive pass: 360 / 768 / 1024 / 1440
-8. Accessibility + print pass
+7. Privacy page
+8. Responsive pass: 360 / 768 / 1024 / 1440
+9. Accessibility + print pass
 
 ---
 

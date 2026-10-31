@@ -1,0 +1,8 @@
+# Buildless static site: Netlify publishes the repository root as-is.
+# There is no build command, framework or package manager.
+[build]
+  publish = "."
+
+# Serve privacy.html at /privacy (also the Netlify default).
+[build.processing.html]
+  pretty_urls = true
