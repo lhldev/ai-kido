@@ -743,7 +743,7 @@ h3 {
   max-width: none;
 }
 
-/* The Investigation ------------------------------------------------------ */
+/* The Game --------------------------------------------------------------- */
 
 .case {
   padding: clamp(1.25rem, 3.5vw, 2.25rem);
@@ -800,7 +800,7 @@ h3 {
 
 .case-meta {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2rem;
   padding-top: 1.25rem;

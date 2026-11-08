@@ -3,7 +3,7 @@
 ## Project
 
 **AI-kido** — an AI scam-awareness workshop for Malaysian secondary school
-students, with a tabletop detective game. Static site, deployed to Cloudflare
+students, with an interactive game. Static site, deployed to Cloudflare
 Pages and Netlify. See `README.md` for the product overview.
 
 ## Read DESIGN.md first

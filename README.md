@@ -18,9 +18,9 @@ The public pages are `index.html` (the workshop) and `privacy.html` (the privacy
 *   **Post-Event Accessibility:** The website and its educational resources will remain publicly accessible to facilitate continuous learning after the workshop concludes.
 *   **Resource Distribution:** Provides reusable educational materials that the collaborating school can utilize for future initiatives.
 
-### Part 2: Interactive Game (Tabletop Investigation)
-*   **Format:** A interactive cybersecurity detective game, structurally inspired by platforms such as TryHackMe.
-*   **Execution:** Participants will work in groups to systematically analyze fictional scam cases and identify indicators of compromise or suspicious activity.
+### Part 2: Interactive Game
+*   **Format:** An interactive cybersecurity game, structurally inspired by platforms such as TryHackMe.
+*   **Execution:** Participants will work through fictional scam scenarios and identify suspicious activity and warning signs.
 *   **Objective:** To apply theoretical knowledge in a simulated environment, thereby reinforcing critical-thinking skills and threat recognition capabilities.
 
 ## 3. Collaboration and Target Demographic

@@ -9,9 +9,9 @@ same commit.
 
 ## 1. Direction
 
-**Typographic editorial — "a scam-awareness dossier."**
+**Typographic editorial — "a scam-awareness briefing."**
 
-The site should read like a printed investigative file: paper, ink, rules, big
+The site should read like a printed briefing document: paper, ink, rules, big
 serif headlines, and monospace type for anything quoted from a scammer.
 
 Visual interest comes from three places only:
@@ -24,8 +24,8 @@ Everything else stays quiet.
 
 ### Why this direction
 
-- The content is already a dossier — scam cases, red flags, "indicators of
-  compromise", case file #001. The styling makes the structure teach the lesson.
+- The content is already case-based — scam examples, red flags and warning
+  signs. The styling makes the structure teach the lesson.
 - Two audiences at once: students need it to not feel like homework; the school
   and UM partner need it to look credible enough to endorse.
 - It survives the room it is used in — a projector and cheap phones. High
@@ -107,7 +107,7 @@ quoted, not blend into the lesson text around it.
 
 - Content sits on a **1140px** grid with 24px gutters. Sections compose it as
   two columns (hero, about), a numeral + body row (learn), or a single bordered
-  panel (the investigation).
+  panel (the game).
 - On `>=1024px` a **left margin rail (~200px)** appears. This is the editorial
   signature: a section label (`02 / Learn`) and a short marginal note, joined to
   the content by a thin hairline leader. The rail is sticky within its section.
@@ -145,10 +145,10 @@ one-line "the check" takeaway, and one mono specimen quote. A top hairline
 separates rows. The AI-impersonation / deepfake module is the feature: it splits
 into copy and specimen columns.
 
-### The Investigation
-The only section that gets a container and a border: case file #001, exhibit
+### The Game
+The only section that gets a container and a border: scenario #001, exhibit
 list, status, CTA. `--game` teal permitted here and nowhere else. The rotated
-case stamp is built in CSS.
+status stamp is built in CSS.
 
 ### About
 Two-column copy, partner information, accessibility statement, and the
