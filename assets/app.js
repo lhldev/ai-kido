@@ -45,29 +45,4 @@
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
   }
-
-  // Mark the section in view in the nav.
-  const navLinks = new Map();
-  document.querySelectorAll('.nav a[href^="#"]').forEach((link) => {
-    navLinks.set(link.getAttribute("href").slice(1), link);
-  });
-
-  if (navLinks.size && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const link = navLinks.get(entry.target.id);
-          if (!link) return;
-          if (entry.isIntersecting) link.setAttribute("aria-current", "true");
-          else link.removeAttribute("aria-current");
-        });
-      },
-      { rootMargin: "-45% 0px -50% 0px" },
-    );
-
-    navLinks.forEach((_, id) => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
-  }
 })();

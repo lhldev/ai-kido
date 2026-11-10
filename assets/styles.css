@@ -251,11 +251,11 @@ mark {
 }
 
 .nav a:hover,
-.nav a[aria-current="true"] {
+.nav a[aria-current="page"] {
   color: var(--ink);
 }
 
-.nav a[aria-current="true"] {
+.nav a[aria-current="page"] {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.4em;
@@ -308,9 +308,30 @@ mark {
   scroll-margin-top: 5.5rem;
 }
 
-.section-head {
+/* First section on a subpage: the header already supplies its own hairline. */
+.section--page {
+  border-top: 0;
+}
+
+.section-head,
+.page-head {
   max-width: 68ch;
   margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.page-head h1,
+.legal h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5.2vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-optical-sizing: auto;
+  text-wrap: balance;
+}
+
+.page-head .lead {
+  margin-top: 1rem;
 }
 
 h2 {
@@ -602,6 +623,61 @@ h3 {
   font-weight: 600;
 }
 
+/* Contents index (home) --------------------------------------------------- */
+
+.contents {
+  list-style: none;
+  border-top: 1px solid var(--ink);
+}
+
+.contents li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.contents a {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.35rem 1.5rem;
+  padding-block: 1.1rem;
+  text-decoration: none;
+}
+
+.contents-num {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.contents-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.contents-note {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink-muted);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.contents-arrow {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+.contents a:hover .contents-title {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
 /* Learn ------------------------------------------------------------------ */
 
 .modules {
@@ -644,7 +720,7 @@ h3 {
   text-transform: uppercase;
 }
 
-.module h3 {
+.module h2 {
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   letter-spacing: -0.01em;
 }
@@ -788,7 +864,7 @@ h3 {
   margin-top: 1.5rem;
 }
 
-.case-intro h3 {
+.case-intro h2 {
   margin-bottom: 0.6rem;
   font-size: clamp(1.5rem, 2.6vw, 2rem);
   letter-spacing: -0.01em;
@@ -966,6 +1042,11 @@ h3 {
   text-decoration-thickness: 2px;
 }
 
+/* The contents index keeps its hairline rows undecorated until hover. */
+.content .contents a {
+  text-decoration: none;
+}
+
 /* Colophon --------------------------------------------------------------- */
 
 .colophon-grid {
@@ -991,16 +1072,6 @@ h3 {
 
 .legal {
   padding-block: clamp(2.75rem, 5vw, 4.5rem) clamp(3.5rem, 7vw, 5.5rem);
-}
-
-.legal h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 5.2vw, 3.5rem);
-  font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  font-optical-sizing: auto;
-  text-wrap: balance;
 }
 
 .legal .lead {
@@ -1364,7 +1435,8 @@ h3 {
   .actions,
   .btn,
   .case-stamp,
-  .status-dot {
+  .status-dot,
+  .contents-arrow {
     display: none !important;
   }
 

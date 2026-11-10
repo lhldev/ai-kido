@@ -11,7 +11,7 @@ The platform is a buildless static site, deployed from this repository to two ho
 
 Both publish the repository root as-is. There is no build step, framework, package manager, environment variable or server-side code. `netlify.toml` pins Netlify's publish directory to the repository root; Cloudflare Pages needs no configuration file. Asset URLs are root-relative (`/assets/...`), so the site must be served from a domain root or a deploy-preview root, not a subdirectory.
 
-The public pages are `index.html` (the workshop) and `privacy.html` (the privacy policy, served at `/privacy` by both hosts). The platform consists of two primary components:
+The public pages are `index.html` (home: Exhibit A and the contents index), `learn.html`, `game.html`, `about.html`, `colophon.html` and `privacy.html` (the privacy policy). Both hosts serve each page at an extensionless URL, so internal links use `/learn`, `/game`, `/about`, `/colophon` and `/privacy`. The platform consists of two primary components:
 
 ### Part 1: Educational Content
 *   **Curriculum:** Delivers essential cybersecurity information, focusing on AI-facilitated scams and practical digital safety measures.
@@ -33,6 +33,6 @@ Both hosts deploy from the repository with no build command and no server-side c
 *   **Cloudflare Pages:** connect the repository, leave the framework preset and build command empty, and set the output directory to the repository root.
 *   **Netlify:** connect the repository. `netlify.toml` sets `publish = "."` and enables pretty URLs, so the build command can stay empty.
 
-No environment variables, redirects or functions are required. Both hosts serve HTML at extensionless URLs: `privacy.html` is available at `/privacy`, so internal links use `/privacy`. A plain local file server (for example `python -m http.server`) does not apply that rewrite; use the Netlify CLI or `npx wrangler pages dev .` to preview host routing, or open `/privacy.html` directly when previewing locally. Both pages must be served over HTTP so the root-relative `/assets/...` paths resolve.
+No environment variables, redirects or functions are required. Both hosts serve HTML at extensionless URLs: `learn.html` is available at `/learn`, and so on, so internal links never include `.html`. A plain local file server (for example `python -m http.server`) does not apply that rewrite; use the Netlify CLI or `npx wrangler pages dev .` to preview host routing, or open the page's `.html` file directly when previewing locally. Every page must be served over HTTP so the root-relative `/assets/...` paths resolve.
 
 The privacy policy is a plain static page as well. It records that the site sets no cookies, runs no analytics and makes no third-party requests, and it names both hosts and their privacy policies.
