@@ -159,6 +159,115 @@ to begin.</code></pre>
     </div>
   </footer>
 
+
+<!-- Button to change the learning pathway -->
+<div class="pathway-settings">
+  <button type="button" id="change-pathway">
+    Change Learning Pathway
+  </button>
+</div>
+
+
+  <!-- Learning Pathway Selection -->
+<dialog id="pathway-modal" aria-labelledby="pathway-title">
+
+  <h2 id="pathway-title">
+    Welcome to AI-kido: Learn!
+  </h2>
+
+  <p>
+    Choose your preferred learning experience.
+  </p>
+
+  <div class="pathway-options">
+
+    <button type="button" id="student-pathway">
+      🎓 Students
+      <span>
+        Learn about social media scams,
+        fake jobs, and online impersonation.
+      </span>
+    </button>
+
+    <button type="button" id="elderly-pathway">
+      👥 Older Adults
+      <span>
+        Learn about family impersonation,
+        banking scams, and fake investments.
+      </span>
+    </button>
+
+  </div>
+
+  <button type="button" id="skip-pathway">
+    Skip for now
+  </button>
+
+</dialog>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("pathway-modal");
+  const changeButton = document.getElementById("change-pathway");
+  const studentButton = document.getElementById("student-pathway");
+  const olderButton = document.getElementById("elderly-pathway");
+  const skipButton = document.getElementById("skip-pathway");
+
+  if (!modal || !studentButton || !olderButton || !skipButton) {
+    return;
+  }
+
+  const storageKey = "aiKidoLearningPathway";
+
+  // Check whether this visitor previously selected a pathway.
+  let savedPathway = null;
+
+  try {
+    savedPathway = localStorage.getItem(storageKey);
+  } catch (error) {
+    console.warn("Browser storage unavailable:", error);
+  }
+
+  // Only show the pop-up if no pathway has been selected.
+  if (!["student", "older", "skipped"].includes(savedPathway)) {
+    modal.showModal();
+  }
+
+  function savePathway(pathway) {
+    try {
+      localStorage.setItem(storageKey, pathway);
+    } catch (error) {
+      console.warn("Could not save learning pathway:", error);
+    }
+
+    modal.close();
+    console.log("Selected learning pathway:", pathway);
+  }
+
+  studentButton.addEventListener("click", () => {
+    savePathway("student");
+  });
+
+  olderButton.addEventListener("click", () => {
+    savePathway("older");
+  });
+
+  skipButton.addEventListener("click", () => {
+    savePathway("skipped");
+  });
+
+
+  // Let visitors change their learning pathway.
+  if (changeButton) {
+    changeButton.addEventListener("click", () => {
+      modal.showModal();
+    });
+  }
+
+});
+</script>
+
   <script src="/assets/app.js" defer></script>
 </body>
 </html>

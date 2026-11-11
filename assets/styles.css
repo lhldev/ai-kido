@@ -2193,3 +2193,198 @@ h3 {
     text-decoration: none;
   }
 }
+
+
+/* ==========================================
+   AI-KIDO LEARNING PATHWAY SELECTOR
+   Matches the existing editorial design
+   ========================================== */
+
+#pathway-modal {
+  width: min(92%, 680px);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: clamp(24px, 5vw, 48px);
+
+  border: 1px solid var(--ink);
+  border-radius: 0;
+
+  background: var(--paper);
+  color: var(--ink);
+
+  font-family: var(--font-body);
+  text-align: left;
+
+  box-shadow: none;
+}
+
+/* Background overlay */
+#pathway-modal::backdrop {
+  background: rgba(20, 17, 15, 0.75);
+}
+
+/* Main heading */
+#pathway-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+/* Introductory description */
+#pathway-modal > p {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+}
+
+/* Two pathway choices */
+.pathway-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Individual choice buttons */
+.pathway-options button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 14px;
+  min-height: 175px;
+  padding: 24px;
+
+  border: 1px solid var(--rule-strong);
+  border-radius: 0;
+
+  background: var(--surface);
+  color: var(--ink);
+
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background var(--ease),
+    border-color var(--ease);
+}
+
+/* Descriptions inside pathway buttons */
+.pathway-options button span {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: var(--ink-muted);
+}
+
+/* Mouse hover */
+.pathway-options button:hover {
+  border-color: var(--ink);
+  background: var(--marker);
+}
+
+/* Keyboard accessibility */
+.pathway-options button:focus-visible,
+#skip-pathway:focus-visible {
+  outline: 3px solid var(--stamp);
+  outline-offset: 3px;
+}
+
+/* Skip option */
+#skip-pathway {
+  min-height: 48px;
+  padding: 12px 20px;
+
+  border: 1px solid var(--ink);
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--ink);
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+#skip-pathway:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  #pathway-modal {
+    width: 94%;
+    padding: 24px;
+  }
+
+  .pathway-options {
+    grid-template-columns: 1fr;
+  }
+
+  .pathway-options button {
+    min-height: 130px;
+    padding: 20px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pathway-options button {
+    transition: none;
+  }
+}
+
+
+/* Learning pathway settings */
+.pathway-settings {
+  display: flex;
+  justify-content: center;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+#change-pathway {
+  min-height: 48px;
+  padding: 12px 24px;
+
+  border: 1px solid var(--ink);
+  border-radius: 0;
+
+  background: var(--paper);
+  color: var(--ink);
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#change-pathway:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+#change-pathway:focus-visible {
+  outline: 3px solid var(--stamp);
+  outline-offset: 3px;
+}
+
