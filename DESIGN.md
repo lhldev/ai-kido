@@ -166,10 +166,10 @@ feature: it splits into copy and specimen columns. The page ends with buttons to
 the game and the workshop brief.
 
 ### The Game
-`/game`. The only section that gets a container and a border: scenario #001,
-exhibit list, status, CTA. `--game` teal permitted here and nowhere else. The
-rotated status stamp is built in CSS. This route will also carry the interactive
-game app and its page-only JavaScript, so no other page pays for that weight.
+`/game` (`game/index.html`) acts as the lightweight hub linking to two standalone interactive games served from separate URLs inside the `/game/` directory so that each route only downloads the code for a single game:
+- `/game/impersonation` (`game/impersonation.html` + `assets/game-impersonation.js`) — **Game 01: Echo Chamber**, covering deepfake videos, AI voice cloning, and personalised messaging at scale, with audio specimens in `assets/audio/`.
+- `/game/forgeries` (`game/forgeries.html` + `assets/game-forgeries.js`) — **Game 02: Paper Trail**, covering mirror websites and fake documentation (investment certificates, romance scam passports and work permits) with inline SVG seals generated in JS.
+`--game` teal is permitted in the game sections and nowhere else. The rotated status stamp is built in CSS.
 
 ### About
 `/about`. Two-column copy, partner information, accessibility statement, and the
@@ -266,7 +266,10 @@ whitespace, never from elevation.
 ```
 index.html                      # / — hero, Exhibit A, contents index
 learn.html                      # /learn
-game.html                       # /game — future game app lives here only
+game/
+  index.html                    # /game — hub linking to the two standalone games
+  impersonation.html            # /game/impersonation — Game 01 (Deepfakes, Voice Clones, Personalised Scale)
+  forgeries.html                # /game/forgeries — Game 02 (Mirror Websites & Fake Documentation)
 about.html                      # /about
 colophon.html                   # /colophon
 privacy.html                    # /privacy
@@ -274,7 +277,12 @@ netlify.toml                    # publish root, no build command
 assets/
   styles.css                    # single stylesheet, tokens in :root
   app.js                        # smooth scroll + header state only
-  game.js                       # only when the game ships — /game loads it alone
+  game-impersonation.js         # loaded by /game/impersonation alone
+  game-forgeries.js             # loaded by /game/forgeries alone
+  audio/
+    clone-sister.mp3            # voice-clone specimen for Game 01 (Case 01)
+    clone-endorsement.mp3       # deepfake endorsement specimen for Game 01 (Case 03)
+    clone-amir.mp3              # video-call voice specimen for Game 01 (Case 04)
   fonts/
     fraunces-latin.woff2
     instrument-sans-latin.woff2
