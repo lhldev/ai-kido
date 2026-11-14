@@ -1,0 +1,4 @@
+offline = true
+root_dir = "."
+fallback_extensions = ["html"]
+index_files = ["index.html"]

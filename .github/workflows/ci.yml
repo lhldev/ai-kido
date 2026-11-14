@@ -1,0 +1,19 @@
+name: Static Site CI
+
+on:
+  push:
+    branches: [ main, prod ]
+  pull_request:
+    branches: [ main, prod ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for broken local links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config lychee.toml './**/*.html'
