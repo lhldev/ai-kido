@@ -31,6 +31,7 @@ The public pages are `index.html` (home: Exhibit A and the contents index), `lea
 Both hosts deploy from the repository with no build command and no server-side code.
 
 *   **Cloudflare Pages:** connect the repository, leave the framework preset and build command empty, and set the build output directory to `public`.
+*   **Cloudflare Workers (static assets and Previews):** `wrangler.jsonc` serves `public/` as static assets and includes the empty `previews` block required by `npx wrangler preview`.
 *   **Netlify:** connect the repository. `netlify.toml` sets `publish = "public"` and enables pretty URLs, so the build command can stay empty.
 
 No environment variables, redirects or functions are required. Both hosts serve HTML at extensionless URLs: `learn.html` is available at `/learn`, and so on, so internal links never include `.html`. A plain local file server (for example `python -m http.server -d public`) does not apply that rewrite; use the Netlify CLI or `npx wrangler pages dev public` to preview host routing, or open the page's `.html` file directly when previewing locally. Every page must be served over HTTP so the root-relative `/assets/...` paths resolve.
