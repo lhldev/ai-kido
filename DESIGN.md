@@ -246,7 +246,7 @@ reveals, no parallax, no autoplay. Honour `prefers-reduced-motion`.
 
 **Performance** — no framework, no build step. One shared CSS file (~28KB raw,
 ~5KB gzipped), one shared `app.js` under 4KB, three woff2 files (128KB), inline
-SVG favicon, zero image files. Deploys statically to Cloudflare Pages and Netlify
+SVG favicon, zero image files. Deploys statically to Cloudflare Workers and Netlify
 as-is. Pages are split so a reader only downloads the page they are on. Any
 interactive game code is page-only (`assets/game.js`, loaded by `/game` alone);
 do not add it to the shared `app.js`.

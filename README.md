@@ -6,10 +6,10 @@ This project addresses the escalating threat of AI-powered online scams, such as
 ## 2. Platform Architecture
 The platform is a buildless static site, deployed from this repository to two hosts:
 
-*   **Cloudflare Pages** — hosting and CDN.
+*   **Cloudflare Workers** — hosting and CDN, serving `public/` as static assets.
 *   **Netlify** — the same static files on a second host.
 
-Both publish the `public/` directory as-is. There is no build step, framework, package manager, environment variable or server-side code. All deployable files — the HTML pages and the `assets/` and `game/` directories — live under `public/`; the repository root holds only documentation, configuration and tooling. `netlify.toml` pins Netlify's publish directory to `public/`; Cloudflare Pages needs no configuration file, only the output directory set in the dashboard. Asset URLs are root-relative (`/assets/...`), so the site must be served from a domain root or a deploy-preview root, not a subdirectory.
+Both publish the `public/` directory as-is. There is no build step, framework, package manager, environment variable or server-side code. All deployable files — the HTML pages and the `assets/` and `game/` directories — live under `public/`; the repository root holds only documentation, configuration and tooling. `netlify.toml` pins Netlify's publish directory to `public/`; `wrangler.jsonc` serves `public/` as Cloudflare Workers static assets. Asset URLs are root-relative (`/assets/...`), so the site must be served from a domain root or a deploy-preview root, not a subdirectory.
 
 The public pages are `index.html` (home: Exhibit A and the contents index), `learn.html`, `game/index.html`, `about.html`, `colophon.html` and `privacy.html` (the privacy policy), all under `public/`. Both hosts serve each page at an extensionless URL, so internal links use `/learn`, `/game`, `/about`, `/colophon` and `/privacy`. The platform consists of two primary components:
 
@@ -30,10 +30,9 @@ The public pages are `index.html` (home: Exhibit A and the contents index), `lea
 ## 4. Deployment
 Both hosts deploy from the repository with no build command and no server-side code.
 
-*   **Cloudflare Pages:** connect the repository, leave the framework preset and build command empty, and set the build output directory to `public`.
-*   **Cloudflare Workers (static assets and Previews):** `wrangler.jsonc` serves `public/` as static assets and includes the empty `previews` block required by `npx wrangler preview`.
+*   **Cloudflare Workers:** connect the repository through Workers Builds, set `main` as the production branch, leave the build command empty, and deploy the `public/` directory configured in `wrangler.jsonc` as static assets. The empty `previews` block enables `npx wrangler preview`. There is no separate `prod` branch.
 *   **Netlify:** connect the repository. `netlify.toml` sets `publish = "public"` and enables pretty URLs, so the build command can stay empty.
 
-No environment variables, redirects or functions are required. Both hosts serve HTML at extensionless URLs: `learn.html` is available at `/learn`, and so on, so internal links never include `.html`. A plain local file server (for example `python -m http.server -d public`) does not apply that rewrite; use the Netlify CLI or `npx wrangler pages dev public` to preview host routing, or open the page's `.html` file directly when previewing locally. Every page must be served over HTTP so the root-relative `/assets/...` paths resolve.
+No environment variables, redirects or functions are required. Both hosts serve HTML at extensionless URLs: `learn.html` is available at `/learn`, and so on, so internal links never include `.html`. A plain local file server (for example `python -m http.server -d public`) does not apply that rewrite; use the Netlify CLI or `npx wrangler dev` to preview host routing, or open the page's `.html` file directly when previewing locally. Every page must be served over HTTP so the root-relative `/assets/...` paths resolve.
 
 The privacy policy is a plain static page as well. It records that the site sets no cookies, runs no analytics and makes no third-party requests, and it names both hosts and their privacy policies.
