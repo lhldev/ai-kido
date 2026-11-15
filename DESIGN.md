@@ -264,32 +264,33 @@ whitespace, never from elevation.
 ## 9. File layout
 
 ```
-index.html                      # / — hero, Exhibit A, contents index
-learn.html                      # /learn
-game/
-  index.html                    # /game — hub linking to the two standalone games
-  impersonation.html            # /game/impersonation — Game 01 (Deepfakes, Voice Clones, Personalised Scale)
-  forgeries.html                # /game/forgeries — Game 02 (Mirror Websites & Fake Documentation)
-about.html                      # /about
-colophon.html                   # /colophon
-privacy.html                    # /privacy
-netlify.toml                    # publish root, no build command
-assets/
-  styles.css                    # single stylesheet, tokens in :root
-  app.js                        # smooth scroll + header state only
-  game-impersonation.js         # loaded by /game/impersonation alone
-  game-forgeries.js             # loaded by /game/forgeries alone
-  audio/
-    clone-sister.mp3            # voice-clone specimen for Game 01 (Case 01)
-    clone-endorsement.mp3       # deepfake endorsement specimen for Game 01 (Case 03)
-    clone-amir.mp3              # video-call voice specimen for Game 01 (Case 04)
-  fonts/
-    fraunces-latin.woff2
-    instrument-sans-latin.woff2
-    jetbrains-mono-latin.woff2
-    OFL-fraunces.txt
-    OFL-instrumentsans.txt
-    OFL-jetbrainsmono.txt
+netlify.toml                    # publish public/, no build command
+public/                         # deploy root — everything served by the hosts
+  index.html                    # / — hero, Exhibit A, contents index
+  learn.html                    # /learn
+  game/
+    index.html                  # /game — hub linking to the two standalone games
+    impersonation.html          # /game/impersonation — Game 01 (Deepfakes, Voice Clones, Personalised Scale)
+    forgeries.html              # /game/forgeries — Game 02 (Mirror Websites & Fake Documentation)
+  about.html                    # /about
+  colophon.html                 # /colophon
+  privacy.html                  # /privacy
+  assets/
+    styles.css                  # single stylesheet, tokens in :root
+    app.js                      # smooth scroll + header state only
+    game-impersonation.js       # loaded by /game/impersonation alone
+    game-forgeries.js           # loaded by /game/forgeries alone
+    audio/
+      clone-sister.mp3          # voice-clone specimen for Game 01 (Case 01)
+      clone-endorsement.mp3     # deepfake endorsement specimen for Game 01 (Case 03)
+      clone-amir.mp3            # video-call voice specimen for Game 01 (Case 04)
+    fonts/
+      fraunces-latin.woff2
+      instrument-sans-latin.woff2
+      jetbrains-mono-latin.woff2
+      OFL-fraunces.txt
+      OFL-instrumentsans.txt
+      OFL-jetbrainsmono.txt
 ```
 
 The header and footer are duplicated in each HTML file because there is no build

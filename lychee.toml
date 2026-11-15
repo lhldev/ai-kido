@@ -1,4 +1,4 @@
 offline = true
-root_dir = "."
+root_dir = "public"
 fallback_extensions = ["html"]
 index_files = ["index.html"]

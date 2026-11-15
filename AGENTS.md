@@ -21,8 +21,10 @@ whitespace. No gradients, shadows, blur, glass, neon, or photography.
 ## Rules
 
 - Keep the stack buildless: plain HTML/CSS/JS. No frameworks, no bundler.
-- The site must work with JavaScript disabled; `assets/app.js` is progressive
-  enhancement only.
+- All deployable files live under `public/`; the repository root holds only
+  documentation, configuration and tooling.
+- The site must work with JavaScript disabled; `public/assets/app.js` is
+  progressive enhancement only.
 - Fake scam artifacts (emails, SMS, job postings) are built in the DOM, never
   screenshots.
 - Open-licence assets only (OFL fonts, MIT icons). Never a real person's photo

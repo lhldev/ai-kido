@@ -1,7 +1,7 @@
-# Buildless static site: Netlify publishes the repository root as-is.
+# Buildless static site: Netlify publishes the static files in public/ as-is.
 # There is no build command, framework or package manager.
 [build]
-  publish = "."
+  publish = "public"
 
 # Serve privacy.html at /privacy (also the Netlify default).
 [build.processing.html]
