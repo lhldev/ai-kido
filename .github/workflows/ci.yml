@@ -2,9 +2,11 @@ name: Static Site CI
 
 on:
   push:
-    branches: [ main, prod ]
+    branches:
+      - main
   pull_request:
-    branches: [ main, prod ]
+    branches:
+      - main
 
 jobs:
   validate:
