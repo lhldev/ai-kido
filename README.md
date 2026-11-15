@@ -24,7 +24,7 @@ The public pages are `index.html` (home: Exhibit A and the contents index), `lea
 *   **Objective:** To apply theoretical knowledge in a simulated environment, thereby reinforcing critical-thinking skills and threat recognition capabilities.
 
 ## 3. Collaboration and Target Demographic
-*   **Target Community:** The primary beneficiaries are secondary school students with limited prior knowledge of cybersecurity. Alternatively, the program may target university students external to Universiti Malaya (UM).
+*   **Target Community:** The primary beneficiaries are secondary school students with limited prior knowledge of cybersecurity. Alternatively, the program may target university students external to Universiti Malaya (UM) such as for the parents of those secondary school students.
 *   **Collaborators:** The project will be conducted in partnership with a secondary school located outside of Universiti Malaya. The collaborating institution will assist in assessing the students' specific educational requirements, coordinating the workshop logistics, and providing evaluative feedback on the proposed curriculum and activities.
 
 ## 4. Deployment
