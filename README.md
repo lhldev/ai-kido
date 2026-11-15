@@ -11,7 +11,7 @@ The platform is a buildless static site, deployed from this repository to two ho
 
 Both publish the `public/` directory as-is. There is no build step, framework, package manager, environment variable or server-side code. All deployable files — the HTML pages and the `assets/` and `game/` directories — live under `public/`; the repository root holds only documentation, configuration and tooling. `netlify.toml` pins Netlify's publish directory to `public/`; `wrangler.jsonc` serves `public/` as Cloudflare Workers static assets. Asset URLs are root-relative (`/assets/...`), so the site must be served from a domain root or a deploy-preview root, not a subdirectory.
 
-The public pages are `index.html` (home: Exhibit A and the contents index), `learn.html`, `game/index.html`, `about.html`, `colophon.html` and `privacy.html` (the privacy policy), all under `public/`. Both hosts serve each page at an extensionless URL, so internal links use `/learn`, `/game`, `/about`, `/colophon` and `/privacy`. The platform consists of two primary components:
+The public pages are `index.html` (home: Exhibit A and the contents index), `learn.html`, `game/index.html`, `about.html`, `colophon.html` and `privacy.html` (the privacy policy), all under `public/`. Both hosts serve each page at an extensionless URL, so internal links use `/learn`, `/game`, `/about`, `/colophon` and `/privacy`. A `404.html` page handles unknown routes on both hosts. Every page declares a canonical URL on the primary host, `https://aikido.maxthecomputerfox.online/`; `robots.txt` and `sitemap.xml` also use that host. The platform consists of two primary components:
 
 ### Part 1: Educational Content
 *   **Curriculum:** Delivers essential cybersecurity information, focusing on AI-facilitated scams and practical digital safety measures.
@@ -30,7 +30,7 @@ The public pages are `index.html` (home: Exhibit A and the contents index), `lea
 ## 4. Deployment
 Both hosts deploy from the repository with no build command and no server-side code.
 
-*   **Cloudflare Workers:** connect the repository through Workers Builds, set `main` as the production branch, leave the build command empty, and deploy the `public/` directory configured in `wrangler.jsonc` as static assets. The empty `previews` block enables `npx wrangler preview`. There is no separate `prod` branch.
+*   **Cloudflare Workers:** connect the repository through Workers Builds, set `main` as the production branch, leave the build command empty, and deploy the `public/` directory configured in `wrangler.jsonc` as static assets. `assets.not_found_handling` is set to `404-page` so unknown routes serve `404.html` with a 404 status; Workers does not do this automatically. The empty `previews` block enables `npx wrangler preview`. There is no separate `prod` branch.
 *   **Netlify:** connect the repository. `netlify.toml` sets `publish = "public"` and enables pretty URLs, so the build command can stay empty.
 
 No environment variables, redirects or functions are required. Both hosts serve HTML at extensionless URLs: `learn.html` is available at `/learn`, and so on, so internal links never include `.html`. A plain local file server (for example `python -m http.server -d public`) does not apply that rewrite; use the Netlify CLI or `npx wrangler dev` to preview host routing, or open the page's `.html` file directly when previewing locally. Every page must be served over HTTP so the root-relative `/assets/...` paths resolve.

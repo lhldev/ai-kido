@@ -275,6 +275,9 @@ public/                         # deploy root — everything served by the hosts
   about.html                    # /about
   colophon.html                 # /colophon
   privacy.html                  # /privacy
+  404.html                      # not-found page, served by both hosts
+  robots.txt                    # crawler rules, points at the sitemap
+  sitemap.xml                   # canonical URLs for the primary host
   assets/
     styles.css                  # single stylesheet, tokens in :root
     app.js                      # smooth scroll + header state only
