@@ -1,4 +1,4 @@
-# Security headers for Cloudflare Workers/Pages and Netlify.
+# Security and cache headers for Cloudflare Workers/Pages and Netlify.
 # https://developers.cloudflare.com/workers/static-assets/headers/
 # https://docs.netlify.com/routing/headers/
 
@@ -8,6 +8,74 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+
+# Cache policy. Rules must not overlap on Cache-Control: Cloudflare joins
+# repeated values while Netlify uses the first match, and Netlify cannot
+# detach a header. Keep the HTML and asset patterns mutually exclusive.
+#
+# HTML documents are unversioned, so revalidate on every navigation. Add a
+# new block here when a new pretty URL (extensionless page) ships.
+/*.html
+  Cache-Control: no-cache, must-revalidate
+
+/
+  Cache-Control: no-cache, must-revalidate
+
+/about
+  Cache-Control: no-cache, must-revalidate
+
+/about/
+  Cache-Control: no-cache, must-revalidate
+
+/colophon
+  Cache-Control: no-cache, must-revalidate
+
+/colophon/
+  Cache-Control: no-cache, must-revalidate
+
+/learn
+  Cache-Control: no-cache, must-revalidate
+
+/learn/
+  Cache-Control: no-cache, must-revalidate
+
+/privacy
+  Cache-Control: no-cache, must-revalidate
+
+/privacy/
+  Cache-Control: no-cache, must-revalidate
+
+/game
+  Cache-Control: no-cache, must-revalidate
+
+/game/
+  Cache-Control: no-cache, must-revalidate
+
+/game/forgeries
+  Cache-Control: no-cache, must-revalidate
+
+/game/forgeries/
+  Cache-Control: no-cache, must-revalidate
+
+/game/impersonation
+  Cache-Control: no-cache, must-revalidate
+
+/game/impersonation/
+  Cache-Control: no-cache, must-revalidate
+
+# CSS and JS are unversioned: allow a short browser cache, then revalidate.
+/assets/*.css
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/*.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Fonts and audio never change in place. Rename the file to bust this cache.
+/assets/fonts/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/audio/*.mp3
+  Cache-Control: public, max-age=31536000, immutable
 
 # HSTS is intentionally omitted: it is cached by browsers and would break
 # local HTTP development. Enable once the site is on a custom HTTPS domain:
