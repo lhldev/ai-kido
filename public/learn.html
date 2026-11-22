@@ -26,6 +26,13 @@
         <a href="/learn" aria-current="page">Learn</a>
         <a href="/game">Game</a>
         <a href="/about">About</a>
+
+<span class="nav-pathway"
+      aria-label="Current learning pathway: General">
+  <span class="nav-pathway-dot" aria-hidden="true"></span>
+  <span id="nav-pathway-label">GENERAL</span>
+</span>
+
       </nav>
     </div>
   </header>
@@ -47,15 +54,61 @@
               <p class="lead">Short modules, built from patterns that repeat across Malaysia. Each one ends with a specimen you can read like evidence.</p>
             </header>
 
+
+<!-- LEARN SECTION READING GUIDE -->
+<aside class="reading-guide" aria-labelledby="reading-guide-title">
+
+  <p class="module-kicker">A quick guide</p>
+
+  <h2 id="reading-guide-title">
+    How to read these lessons
+  </h2>
+
+  <p>
+    Each lesson explains a scam, shows warning signs,
+    and teaches you how to stay safe.
+  </p>
+
+  <ul class="reading-guide-list">
+
+    <li>
+      <mark>Yellow highlight</mark>
+      <span>
+        Important warning signs or details
+        you should pay attention to.
+      </span>
+    </li>
+
+    <li>
+      <strong>The Check</strong>
+      <span>
+        A simple action you can take
+        to verify something suspicious.
+      </span>
+    </li>
+
+    <li>
+      <strong>Specimen</strong>
+      <span>
+        A fictional scam message or conversation
+        showing how a scam might appear.
+      </span>
+    </li>
+
+  </ul>
+
+</aside>
+
+
             <ol class="modules">
-              <li class="module">
+              <li class="module" id="lesson-phishing">
                 <p class="module-num" aria-hidden="true">01</p>
                 <div class="module-body">
                   <p class="module-kicker">The login</p>
                   <h2>Understanding Phishing Attacks</h2>
-                  <p class="module-text">A stolen password is still the most common way an account is lost. The message borrows a bank’s colours, copies a login screen and adds a deadline — but the address is never quite right. AI has made the writing cleaner; it has not learned your bank’s real domain.</p>
+                  <p class="module-text" id="phishing-description">A stolen password is still the most common way an account is lost. The message borrows a bank’s colours, copies a login screen and adds a deadline — but the address is never quite right. AI has made the writing cleaner; it has not learned your bank’s real domain.</p>
 
-                  <ol class="flags">
+                  <ol class="flags" id="phishing-flags">
                     <li>The domain is <mark>a lookalike</mark> — one swapped letter, a hyphen, or <span class="mono">.net</span> instead of <span class="mono">.com.my</span>.</li>
                     <li>A deadline measured in <mark>minutes, not days</mark>.</li>
                     <li>You are asked to log in from a link, instead of opening <mark>the app you already have</mark>.</li>
@@ -63,48 +116,246 @@
 
                   <p class="takeaway"><span class="takeaway-label">The check</span> Type the address yourself. Never log in from a link.</p>
 
-                  <figure class="specimen">
-                    <pre><code>From: Bank Maju &lt;alert@bankmaju-secure.net&gt;
-Subject: Final notice — account suspension
+                  
+<!-- PHISHING EMAIL SPECIMEN -->
+<figure class="specimen specimen--email" id="phishing-specimen">
 
-We detected unusual activity. Verify your identity
-within 30 minutes or your account will be closed.
+  <div class="email-mockup">
 
-  https://bankmaju-secure.net/verify
+    <div class="email-header">
+      <div class="email-avatar" aria-hidden="true">✉</div>
 
-This is an automated message. Do not reply.</code></pre>
-                    <figcaption>Specimen 01 · phishing email · invented</figcaption>
-                  </figure>
+      <div class="email-sender">
+        <strong id="phishing-sender">
+          Bank Maju Security
+        </strong>
+
+
+
+
+        <span id="phishing-address">
+          alert@bankmaju-secure.example
+        </span>
+      </div>
+
+      <span class="email-time">10:42 AM</span>
+    </div>
+
+    <div class="email-content">
+      <h3 id="phishing-subject">
+        Final Notice — Account Suspension
+      </h3>
+
+      <p id="phishing-message">
+        We detected unusual activity on your account.
+        Verify your identity within 30 minutes to
+        prevent your account from being suspended.
+      </p>
+
+
+      <span class="email-fake-button">
+        Verify Account Now
+      </span>
+
+      <p class="email-link" id="phishing-link">
+        bankmaju-secure.example/verify
+      </p>
+
+
+    </div>
+
+  </div>
+
+  <figcaption>
+    Specimen 01 · fictional phishing email ·
+    educational simulation
+  </figcaption>
+
+</figure>
+
+
+<!-- LESSON 1: PHISHING SPECIMEN ANALYSIS -->
+<aside class="specimen-analysis"
+       aria-labelledby="phishing-analysis-title">
+
+  <p class="module-kicker">Specimen analysis / 01</p>
+
+  <h3 id="phishing-analysis-title">
+    Why is this email suspicious?
+  </h3>
+
+  <ol class="specimen-analysis-list">
+    <li>
+      <strong>Unverified sender</strong>
+      <p>
+        A familiar sender name does not prove
+        that the email came from a genuine organization.
+      </p>
+    </li>
+
+    <li>
+      <strong>Artificial urgency</strong>
+      <p>
+        A 30-minute deadline pressures you
+        to act before checking the facts.
+      </p>
+    </li>
+
+    <li>
+      <strong>Suspicious link</strong>
+      <p>
+        The email directs you to a website
+        that has not been independently verified.
+      </p>
+    </li>
+  </ol>
+
+</aside>
+
+
                 </div>
               </li>
+              
+<li class="module module--feature">
+  <p class="module-num" aria-hidden="true">02</p>
 
-              <li class="module module--feature">
-                <p class="module-num" aria-hidden="true">02</p>
-                <div class="module-body">
-                  <div class="module-main">
-                    <p class="module-kicker">The voice</p>
-                    <h2>AI impersonation</h2>
-                    <p class="module-text">Cloning a voice takes a few seconds of audio — a story, a voicemail greeting, a video. Pair it with a new number and a family emergency, and the scam becomes a conversation you believe you are having with someone you trust. Video calls are the same trick with a face.</p>
+  <div class="module-body">
+    <div class="module-main">
+      <p class="module-kicker">The voice</p>
 
-                    <ol class="flags">
-                      <li>A <mark>new number</mark> claims to be someone you know.</li>
-                      <li>The call cannot be returned, or the caller refuses to be seen.</li>
-                      <li>Money, gift cards or a transfer — urgently, and <mark>“don’t tell anyone yet”</mark>.</li>
-                    </ol>
+      <h2>AI impersonation</h2>
 
-                    <p class="takeaway"><span class="takeaway-label">The check</span> Hang up. Call back on the number you already have.</p>
-                  </div>
+      <p class="module-text">
+        Cloning a voice takes a few seconds of audio — a story,
+        a voicemail greeting, a video. Pair it with a new number
+        and a family emergency, and the scam becomes a conversation
+        you believe you are having with someone you trust.
+        Video calls are the same trick with a face.
+      </p>
 
-                  <figure class="specimen specimen--feature">
-                    <pre><code>[voice note · 0:11]
-“Mum, I dropped my phone. This is my
-new number. Don’t call the old one.
-I need RM1,500 today. Please don’t
-tell Dad yet.”</code></pre>
-                    <figcaption>Specimen 02 · cloned voice note · invented</figcaption>
-                  </figure>
-                </div>
-              </li>
+      <ol class="flags">
+        <li>
+          A <mark>new number</mark> claims to be someone you know.
+        </li>
+        <li>
+          The call cannot be returned, or the caller refuses to be seen.
+        </li>
+        <li>
+          Money, gift cards or a transfer — urgently, and
+          <mark>“don’t tell anyone yet”</mark>.
+        </li>
+      </ol>
+
+      <p class="takeaway">
+        <span class="takeaway-label">The check</span>
+        Hang up. Call back on the number you already have.
+      </p>
+    </div>
+
+    
+<!-- LESSON 2: AI IMPERSONATION SPECIMEN -->
+<figure class="specimen specimen--feature specimen--voice"
+        id="impersonation-specimen">
+
+  <div class="voice-mockup">
+
+    <div class="voice-chat-header">
+      <div class="voice-chat-avatar" aria-hidden="true">?</div>
+
+      <div class="voice-chat-contact">
+        <strong id="voice-contact">Unknown Number</strong>
+        <span id="voice-number">+60 1X-XXX XXXX</span>
+      </div>
+    </div>
+
+    <div class="voice-chat-body">
+      <div class="voice-message">
+
+        <div class="voice-message-player"
+             aria-label="Illustration of a voice note. Audio playback is not available.">
+
+          <span class="voice-play-symbol" aria-hidden="true">▶</span>
+
+          <div class="voice-waveform" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+
+          <span class="voice-duration">0:11</span>
+        </div>
+
+        <p class="voice-transcript-label">
+          Voice note transcript
+        </p>
+
+        <p class="voice-transcript" id="voice-transcript">
+          “Mum, I dropped my phone. This is my new number.
+          I need RM1,500 today. Please don't tell Dad yet.”
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <figcaption>
+    Specimen 02 · fictional AI impersonation message ·
+    simulated voice note, no audio playback
+  </figcaption>
+
+</figure>
+
+<!-- LESSON 2: VOICE-NOTE ANALYSIS -->
+<aside class="voice-analysis"
+       aria-labelledby="voice-analysis-title">
+
+  <p class="module-kicker">Specimen analysis / 02</p>
+
+  <h3 id="voice-analysis-title">
+    Can you trust a familiar voice?
+  </h3>
+
+  <p class="voice-analysis-intro">
+    Not necessarily. AI-generated voices can imitate someone
+    you know. Pay attention to these warning signs:
+  </p>
+
+  <ul class="voice-analysis-list">
+
+    <li>
+      <strong>An unfamiliar number</strong>
+      <p>
+        The caller claims to be someone you know,
+        but contacts you from a different number.
+      </p>
+    </li>
+
+    <li>
+      <strong>An urgent request</strong>
+      <p>
+        They pressure you to send money, share a
+        verification code, or act immediately.
+      </p>
+    </li>
+
+    <li>
+      <strong>Verify independently</strong>
+      <p>
+        Contact the person using a number or channel
+        you already trust. Never share a one-time
+        verification code.
+      </p>
+    </li>
+
+  </ul>
+
+</aside>
+
+
+  </div>
+</li>
+
 
               <li class="module">
                 <p class="module-num" aria-hidden="true">03</p>
@@ -121,15 +372,110 @@ tell Dad yet.”</code></pre>
 
                   <p class="takeaway"><span class="takeaway-label">The check</span> Never pay to start a job. Never lend your account to move money.</p>
 
-                  <figure class="specimen">
-                    <pre><code>[Instagram DM]
-Hi! We need 5 part-time staff. Work from
-home, RM300/day, 2 hours. No experience
-needed. Start today — just pay RM50
-activation. WhatsApp +60 11-2XX 4471
-to begin.</code></pre>
-                    <figcaption>Specimen 03 · job offer message · invented</figcaption>
-                  </figure>
+                  
+<!-- LESSON 3: FAKE JOB OFFER SPECIMEN -->
+<figure class="specimen specimen--job"
+        id="job-specimen">
+
+  <div class="job-mockup">
+
+    <div class="job-chat-header">
+      <div class="job-chat-avatar" aria-hidden="true">
+        ✦
+      </div>
+
+      <div class="job-chat-contact">
+        <strong id="job-sender">
+          Talent Recruitment Team
+        </strong>
+
+        <span id="job-handle">
+          @talent.work.example
+        </span>
+      </div>
+
+      <span class="job-chat-menu" aria-hidden="true">
+        ···
+      </span>
+    </div>
+
+    <div class="job-chat-body">
+
+      <div class="job-message">
+        <p id="job-message-text">
+          Hi! We're recruiting for easy online work.
+          Earn RM300 daily with no experience needed!
+          To activate your position, pay a RM50
+          registration fee first. This offer is
+          only available today.
+        </p>
+
+        <span class="job-message-time">
+          10:42 AM
+        </span>
+      </div>
+
+      <p class="job-simulation-note">
+        Educational simulation · No real account
+        or payment link
+      </p>
+
+    </div>
+
+  </div>
+
+  <figcaption>
+    Specimen 03 · fictional recruitment message ·
+    educational simulation
+  </figcaption>
+
+</figure>
+
+
+<!-- LESSON 3: FAKE JOB OFFER ANALYSIS -->
+<aside class="job-analysis"
+       aria-labelledby="job-analysis-title">
+
+  <p class="module-kicker">Specimen analysis / 03</p>
+
+  <h3 id="job-analysis-title">
+    Why is this job offer suspicious?
+  </h3>
+
+  <p class="job-analysis-intro">
+    A convincing recruitment message can still contain warning signs.
+    Look closely at the claims and requests.
+  </p>
+
+  <ol class="job-analysis-list">
+    <li>
+      <strong>Unverified earnings</strong>
+      <p>
+        High earnings promised for simple tasks should
+        be independently verified.
+      </p>
+    </li>
+
+    <li>
+      <strong>Upfront payment</strong>
+      <p>
+        A request to pay before starting work
+        is a major warning sign.
+      </p>
+    </li>
+
+    <li>
+      <strong>Artificial urgency</strong>
+      <p>
+        Pressure to apply immediately can prevent you
+        from checking whether the job is genuine.
+      </p>
+    </li>
+  </ol>
+
+</aside>
+
+
                 </div>
               </li>
             </ol>
@@ -206,68 +552,8 @@ to begin.</code></pre>
 
 </dialog>
 
+<script src="/assets/learn-pathway.js" defer></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("pathway-modal");
-  const changeButton = document.getElementById("change-pathway");
-  const studentButton = document.getElementById("student-pathway");
-  const olderButton = document.getElementById("elderly-pathway");
-  const skipButton = document.getElementById("skip-pathway");
-
-  if (!modal || !studentButton || !olderButton || !skipButton) {
-    return;
-  }
-
-  const storageKey = "aiKidoLearningPathway";
-
-  // Check whether this visitor previously selected a pathway.
-  let savedPathway = null;
-
-  try {
-    savedPathway = localStorage.getItem(storageKey);
-  } catch (error) {
-    console.warn("Browser storage unavailable:", error);
-  }
-
-  // Only show the pop-up if no pathway has been selected.
-  if (!["student", "older", "skipped"].includes(savedPathway)) {
-    modal.showModal();
-  }
-
-  function savePathway(pathway) {
-    try {
-      localStorage.setItem(storageKey, pathway);
-    } catch (error) {
-      console.warn("Could not save learning pathway:", error);
-    }
-
-    modal.close();
-    console.log("Selected learning pathway:", pathway);
-  }
-
-  studentButton.addEventListener("click", () => {
-    savePathway("student");
-  });
-
-  olderButton.addEventListener("click", () => {
-    savePathway("older");
-  });
-
-  skipButton.addEventListener("click", () => {
-    savePathway("skipped");
-  });
-
-
-  // Let visitors change their learning pathway.
-  if (changeButton) {
-    changeButton.addEventListener("click", () => {
-      modal.showModal();
-    });
-  }
-
-});
-</script>
 
   <script src="/assets/app.js" defer></script>
 </body>

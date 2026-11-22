@@ -2388,3 +2388,1475 @@ h3 {
   outline-offset: 3px;
 }
 
+
+/* ==========================================
+   AI-KIDO LEARN — READING GUIDE
+   ========================================== */
+
+.reading-guide {
+  margin: 0 0 40px;
+  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+/* Guide heading */
+.reading-guide h2 {
+  margin: 8px 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+/* Introductory text */
+.reading-guide > p:not(.module-kicker) {
+  margin-bottom: 24px;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* Indicator list */
+.reading-guide-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reading-guide-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule-strong);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.reading-guide-list li > strong {
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+/* Yellow highlight indicator */
+.reading-guide-list mark {
+  display: inline;
+  align-self: flex-start;
+  padding: 2px 5px;
+  background: var(--marker);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Description of each indicator */
+.reading-guide-list li > span {
+  color: var(--ink-muted);
+}
+
+/* Accessible mobile spacing */
+@media (max-width: 600px) {
+  .reading-guide {
+    margin-bottom: 28px;
+    padding: 20px;
+  }
+
+  .reading-guide-list li {
+    padding: 14px 0;
+  }
+}
+
+
+/* ==========================================
+   AI-KIDO — REALISTIC EMAIL SPECIMEN
+   ========================================== */
+
+/* Outer specimen container */
+.specimen--email {
+  margin-top: 24px;
+}
+
+/* Email interface */
+.email-mockup {
+  background: #ffffff;
+  color: #14110f;
+  border: 1px solid #d4caba;
+  font-family: var(--font-body);
+  overflow: hidden;
+}
+
+/* Sender information */
+.email-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid #d4caba;
+}
+
+.email-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: #e7ebf0;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.email-sender {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.email-sender strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.email-sender span {
+  font-size: 13px;
+  color: #625b54;
+}
+
+.email-time {
+  margin-left: auto;
+  align-self: flex-start;
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #625b54;
+}
+
+/* Email message */
+.email-content {
+  padding: 24px 20px;
+}
+
+.email-content h3 {
+  margin: 0 0 18px;
+  font-family: var(--font-body);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.email-content > p {
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Non-interactive, fictional button */
+.email-fake-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #b23a2e;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  cursor: default;
+}
+
+/* Fictional link shown as evidence */
+.email-content .email-link {
+  margin: 16px 0 0;
+  color: #9d3328;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .email-header {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .email-content {
+    padding: 20px 16px;
+  }
+
+  .email-time {
+    margin-left: 54px;
+  }
+
+  .email-content h3 {
+    font-size: 18px;
+  }
+}
+
+
+/* ==========================================
+   AI-KIDO — SPECIMEN ANALYSIS
+   ========================================== */
+
+.specimen-analysis {
+  margin: 24px 0 40px;
+  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid var(--ink);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.specimen-analysis h3 {
+  margin: 8px 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.25;
+}
+
+.specimen-analysis-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: warning;
+}
+
+.specimen-analysis-list li {
+  counter-increment: warning;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  column-gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.specimen-analysis-list li::before {
+  content: counter(warning, decimal-leading-zero);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--marker);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  grid-row: span 2;
+}
+
+.specimen-analysis-list strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.specimen-analysis-list p {
+  grid-column: 2;
+  margin: 5px 0 0;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .specimen-analysis {
+    padding: 20px;
+  }
+
+  .specimen-analysis-list li {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  .specimen-analysis-list li::before {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+}
+
+
+
+/* ==========================================
+   AI-KIDO — EMAIL SPECIMEN FINAL STYLING
+   Clean sender layout and yellow highlights
+   ========================================== */
+
+/* Let the sender information fill the header */
+.email-header .email-sender {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Highlight suspicious details inside emails */
+.email-mockup mark {
+  background: var(--marker);
+  color: var(--ink);
+  padding: 1px 3px;
+  font-weight: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Improve readability on mobile */
+@media (max-width: 600px) {
+  .email-header .email-sender {
+    width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+
+/* ==========================================
+   AI-KIDO LEARN — VOICE NOTE SPECIMEN
+   ========================================== */
+
+.specimen--voice {
+  overflow: hidden;
+}
+
+.voice-mockup {
+  background: #eae7df;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* Chat header */
+.voice-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+
+.voice-chat-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #64746c;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.voice-chat-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.voice-chat-contact strong {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.voice-chat-contact span {
+  color: var(--ink-muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* Chat body and message */
+.voice-chat-body {
+  padding: 22px 16px;
+}
+
+.voice-message {
+  max-width: 100%;
+  padding: 16px;
+  background: #fffdf8;
+  border: 1px solid var(--rule-strong);
+}
+
+/* Decorative voice player */
+.voice-message-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.voice-play-symbol {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+/* Audio waveform illustration */
+.voice-waveform {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  height: 34px;
+  min-width: 0;
+}
+
+.voice-waveform span {
+  flex: 1;
+  height: 12px;
+  background: var(--rule-strong);
+}
+
+.voice-waveform span:nth-child(3n) {
+  height: 26px;
+}
+
+.voice-waveform span:nth-child(4n) {
+  height: 18px;
+}
+
+.voice-waveform span:nth-child(5n) {
+  height: 30px;
+  background: var(--stamp);
+}
+
+.voice-duration {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Transcript */
+.voice-transcript-label {
+  margin: 16px 0 8px;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.voice-transcript {
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+/* Yellow warning highlights */
+.voice-transcript mark {
+  background: var(--marker);
+  color: var(--ink);
+  padding: 1px 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .voice-chat-header {
+    padding: 14px;
+  }
+
+  .voice-chat-body {
+    padding: 14px;
+  }
+
+  .voice-message {
+    padding: 14px;
+  }
+
+  .voice-waveform {
+    gap: 3px;
+  }
+}
+
+/* ==========================================
+   AI-KIDO LEARN — VOICE-NOTE ANALYSIS
+   ========================================== */
+
+/* Position analysis beneath the voice-note specimen */
+.module--feature .voice-analysis {
+  grid-column: 2;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Main analysis container */
+.voice-analysis {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+/* Heading */
+.voice-analysis h3 {
+  margin: 8px 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  line-height: 1.25;
+}
+
+/* Introductory explanation */
+.voice-analysis-intro {
+  margin-bottom: 20px;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Warning sign list */
+.voice-analysis-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.voice-analysis-list li {
+  padding: 16px 0;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.voice-analysis-list strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.voice-analysis-list p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Tablet and mobile layout */
+@media (max-width: 900px) {
+  .module--feature .voice-analysis {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .voice-analysis {
+    padding: 20px;
+  }
+
+  .voice-analysis-list li {
+    padding: 14px 0;
+  }
+}
+
+/* ==========================================
+   LESSON 2 — FULL-WIDTH LANDSCAPE ANALYSIS
+   ========================================== */
+
+/* Make the analysis span both columns */
+.module--feature .voice-analysis {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Keep the heading and intro readable */
+.voice-analysis h3 {
+  max-width: none;
+  margin-bottom: 12px;
+}
+
+.voice-analysis-intro {
+  max-width: 75ch;
+  margin-bottom: 24px;
+}
+
+/* Display three explanations horizontally */
+.voice-analysis-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Clean editorial-style separators */
+.voice-analysis-list li {
+  min-width: 0;
+  padding: 16px 12px 0 0;
+  border-top: 2px solid var(--ink);
+}
+
+.voice-analysis-list strong {
+  font-size: 17px;
+}
+
+.voice-analysis-list p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Stack explanations on smaller screens */
+@media (max-width: 900px) {
+  .module--feature .voice-analysis {
+    grid-column: 1 / -1;
+  }
+
+  .voice-analysis-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .voice-analysis-list li {
+    padding: 16px 0;
+    border-top: 1px solid var(--rule-strong);
+  }
+}
+
+/* ==========================================
+   LESSON 1 — HIGHLIGHTED EVIDENCE QUOTES
+   ========================================== */
+
+.specimen-analysis .analysis-evidence {
+  display: inline;
+  margin-left: 4px;
+  padding: 2px 4px;
+  background: var(--marker);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.95em;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ==========================================
+   LESSON 2 — REFINED LANDSCAPE ANALYSIS
+   ========================================== */
+
+.module--feature .voice-analysis {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.voice-analysis {
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.voice-analysis h3 {
+  margin-bottom: 14px;
+}
+
+.voice-analysis-intro {
+  max-width: 80ch;
+  margin-bottom: 30px;
+}
+
+/* Three spacious editorial columns */
+.voice-analysis-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  list-style: none;
+  counter-reset: voice-warning;
+}
+
+/* Individual warning */
+.voice-analysis-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px 0 0;
+  border-top: 2px solid var(--ink);
+  counter-increment: voice-warning;
+}
+
+/* Small yellow number */
+.voice-analysis-list li::before {
+  content: counter(voice-warning, decimal-leading-zero);
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  background: var(--marker);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+/* Heading */
+.voice-analysis-list strong {
+  display: block;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+/* Matching highlighted evidence */
+.voice-analysis .analysis-evidence {
+  display: table;
+  margin: 10px 0 0;
+  padding: 3px 6px;
+  background: var(--marker);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Explanation */
+.voice-analysis-list p {
+  display: block;
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+/* Stack the columns on smaller screens */
+@media (max-width: 800px) {
+  .voice-analysis-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .voice-analysis-list li {
+    padding-top: 18px;
+  }
+}
+
+/* ==========================================
+   AI-KIDO LEARN — FAKE JOB OFFER SPECIMEN
+   ========================================== */
+
+.specimen--job {
+  overflow: hidden;
+}
+
+.job-mockup {
+  background: #f1eee7;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* Recruitment profile header */
+.job-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+
+.job-chat-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e8e3da;
+  color: var(--ink);
+  font-size: 23px;
+}
+
+.job-chat-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+}
+
+.job-chat-contact strong {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.job-chat-contact span {
+  color: var(--ink-muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.job-chat-menu {
+  color: var(--ink-muted);
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* Chat background */
+.job-chat-body {
+  padding: 22px 20px;
+}
+
+/* Incoming recruitment message */
+.job-message {
+  max-width: 90%;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid var(--rule-strong);
+}
+
+.job-message p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.job-message-time {
+  display: block;
+  margin-top: 12px;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-align: right;
+}
+
+/* Educational simulation notice */
+.job-simulation-note {
+  margin-top: 16px;
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Highlight suspicious phrases */
+.job-message mark {
+  background: var(--marker);
+  color: var(--ink);
+  padding: 1px 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .job-chat-header {
+    padding: 14px;
+  }
+
+  .job-chat-body {
+    padding: 14px;
+  }
+
+  .job-message {
+    max-width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==========================================
+   AI-KIDO — LESSON 3 SPECIMEN ANALYSIS
+   ========================================== */
+
+.job-analysis {
+  max-width: 100%;
+  margin-top: 24px;
+  padding: clamp(24px, 3vw, 36px);
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.job-analysis h3 {
+  margin: 8px 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  line-height: 1.25;
+}
+
+.job-analysis-intro {
+  max-width: 80ch;
+  margin-bottom: 30px;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Three landscape columns */
+.job-analysis-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: job-warning;
+}
+
+/* Individual warning sign */
+.job-analysis-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px 0 0;
+  border-top: 2px solid var(--ink);
+  counter-increment: job-warning;
+}
+
+/* Yellow numbered indicator */
+.job-analysis-list li::before {
+  content: counter(job-warning, decimal-leading-zero);
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  background: var(--marker);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Warning heading */
+.job-analysis-list strong {
+  display: block;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Highlighted evidence quotation */
+.job-analysis .analysis-evidence {
+  display: table;
+  max-width: 100%;
+  margin-top: 10px;
+  padding: 3px 6px;
+  background: var(--marker);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Explanation */
+.job-analysis-list p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Responsive layout */
+@media (max-width: 800px) {
+  .job-analysis-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .job-analysis-list li {
+    padding-top: 18px;
+  }
+}
+
+
+/* ==========================================
+   AI-KIDO — NAVIGATION PATHWAY INDICATOR
+   ========================================== */
+
+.nav-pathway {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 6px 10px;
+
+  border: 1px solid var(--rule-strong);
+  background: var(--surface);
+  color: var(--ink);
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Small active indicator */
+.nav-pathway-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--game);
+}
+
+/* Keep navigation items aligned */
+.nav {
+  align-items: center;
+}
+
+/* Prevent the indicator from crowding mobile navigation */
+@media (max-width: 620px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 16px;
+  }
+
+  .nav-pathway {
+    margin: 0 0 10px auto;
+    font-size: 10px;
+    min-height: 30px;
+    padding: 5px 8px;
+  }
+}
+
+
+/* ==========================================
+   AI-KIDO — SMOOTH INTERACTIONS
+   ========================================== */
+
+/* Gentle entrance animation */
+@keyframes aikido-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page heading */
+.page-head {
+  animation: aikido-fade-up 550ms ease-out both;
+}
+
+/* Reading Guide */
+.reading-guide {
+  animation: aikido-fade-up 600ms ease-out 100ms both;
+}
+
+/* Lessons appear in sequence on page load */
+.modules > .module {
+  animation: aikido-fade-up 650ms ease-out both;
+}
+
+.modules > .module:nth-child(1) {
+  animation-delay: 120ms;
+}
+
+.modules > .module:nth-child(2) {
+  animation-delay: 220ms;
+}
+
+.modules > .module:nth-child(3) {
+  animation-delay: 320ms;
+}
+
+/* Smooth specimen hover effects */
+.specimen--email,
+.specimen--voice,
+.specimen--job {
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.specimen--email:hover,
+.specimen--voice:hover,
+.specimen--job:hover {
+  border-color: var(--stamp);
+}
+
+/* Smooth analysis borders */
+.specimen-analysis,
+.voice-analysis,
+.job-analysis {
+  transition: border-color 220ms ease;
+}
+
+.specimen-analysis:hover,
+.voice-analysis:hover,
+.job-analysis:hover {
+  border-color: var(--stamp);
+}
+
+/* Navigation pathway indicator */
+.nav-pathway {
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+/* Pathway selection button */
+#change-pathway {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+/* Respect reduced-motion accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  .page-head,
+  .reading-guide,
+  .modules > .module {
+    animation: none;
+  }
+
+  .specimen--email,
+  .specimen--voice,
+  .specimen--job,
+  .specimen-analysis,
+  .voice-analysis,
+  .job-analysis,
+  .nav-pathway,
+  #change-pathway {
+    transition: none;
+  }
+}
+
+
+/* ==========================================
+   AI-KIDO — SCROLL-TRIGGERED ANIMATIONS
+   ========================================== */
+
+/* Override the earlier page-load animations */
+.reading-guide,
+.modules > .module {
+  animation: none;
+}
+
+/* Reveal each section when JavaScript detects it */
+@keyframes aikido-scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Applied when an element enters the viewport */
+.reading-guide.is-revealed,
+.modules > .module.is-revealed {
+  animation: aikido-scroll-reveal 650ms ease-out both;
+}
+
+/* Don't animate for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reading-guide.is-revealed,
+  .modules > .module.is-revealed {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   AI-KIDO — REFINED ANIMATIONS
+   ========================================== */
+
+/* Gentle fade instead of sliding entire lessons */
+@keyframes aikido-gentle-reveal {
+  from {
+    opacity: 0.65;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.reading-guide.is-revealed,
+.modules > .module.is-revealed {
+  animation: aikido-gentle-reveal 450ms ease-out both;
+}
+
+/* Subtle one-time yellow pulse */
+@keyframes aikido-highlight-pulse {
+  0% {
+    background-color: var(--marker);
+  }
+
+  40% {
+    background-color: #fff4a3;
+  }
+
+  100% {
+    background-color: var(--marker);
+  }
+}
+
+/* Highlights in lessons and realistic specimens */
+.modules > .module.is-revealed mark {
+  animation: aikido-highlight-pulse 950ms ease-in-out 1;
+}
+
+/* Highlights added when switching learning pathways */
+.email-mockup mark,
+.voice-transcript mark,
+.job-message mark {
+  animation: aikido-highlight-pulse 950ms ease-in-out 1;
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  .reading-guide.is-revealed,
+  .modules > .module.is-revealed,
+  .modules > .module.is-revealed mark,
+  .email-mockup mark,
+  .voice-transcript mark,
+  .job-message mark {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   AI-KIDO — BRIGHTER, LONGER HIGHLIGHT PULSE
+   ========================================== */
+
+@keyframes aikido-highlight-pulse {
+  0%, 100% {
+    background-color: var(--marker);
+    box-shadow: none;
+  }
+
+  25%, 75% {
+    background-color: #ffe500;
+    box-shadow: 0 0 0 3px rgba(255, 229, 0, 0.28);
+  }
+
+  50% {
+    background-color: #fff7a0;
+    box-shadow: 0 0 0 5px rgba(255, 229, 0, 0.12);
+  }
+}
+
+/* Pulse highlighted warning signs for 3 seconds */
+.modules > .module.is-revealed mark,
+.email-mockup mark,
+.voice-transcript mark,
+.job-message mark {
+  animation: aikido-highlight-pulse 3s ease-in-out 1;
+}
+
+/* Keep highlights readable and steady afterward */
+.modules mark {
+  color: var(--ink);
+}
+
+/* Accessibility: no flashing when reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+  .modules > .module.is-revealed mark,
+  .email-mockup mark,
+  .voice-transcript mark,
+  .job-message mark {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   AI-KIDO — SMOOTH LESSON SCROLLING
+   ========================================== */
+
+/* Stop the old lesson reveal animations */
+.reading-guide,
+.modules > .module,
+.reading-guide.is-revealed,
+.modules > .module.is-revealed {
+  animation: none !important;
+  opacity: 1;
+  transform: none;
+}
+
+/* Keep lesson content stable during scrolling */
+.modules > .module {
+  transition: none;
+}
+
+/* ==========================================
+   BRIGHT HIGHLIGHTS — 10 SECOND PULSE
+   ========================================== */
+
+@keyframes aikido-long-highlight {
+  0%, 100% {
+    background-color: var(--marker);
+    box-shadow: none;
+  }
+
+  15%, 45%, 75% {
+    background-color: #ffdf00;
+    box-shadow: 0 0 0 4px rgba(255, 223, 0, 0.3);
+  }
+
+  30%, 60%, 90% {
+    background-color: #fff6a0;
+    box-shadow: 0 0 0 2px rgba(255, 223, 0, 0.15);
+  }
+}
+
+/* Disable the old highlight animations */
+.modules mark {
+  animation: none;
+}
+
+/* Play only when JavaScript activates this class */
+.modules > .module.is-revealed mark.highlight-active {
+  animation: aikido-long-highlight 10s ease-in-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modules > .module.is-revealed mark.highlight-active {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   AI-KIDO — INDIVIDUAL ELEMENT TRANSITIONS
+   ========================================== */
+
+@keyframes aikido-element-enter {
+  from {
+    opacity: 0.4;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate inner elements instead of entire lessons */
+.modules > .module.is-revealed .module-main,
+.modules > .module.is-revealed .specimen,
+.modules > .module.is-revealed .specimen-analysis,
+.modules > .module.is-revealed .voice-analysis,
+.modules > .module.is-revealed .job-analysis,
+.modules > .module.is-revealed .takeaway {
+  animation: aikido-element-enter 650ms ease-out both;
+}
+
+/* Stagger the content */
+.modules > .module.is-revealed .module-main {
+  animation-delay: 80ms;
+}
+
+.modules > .module.is-revealed .specimen {
+  animation-delay: 160ms;
+}
+
+.modules > .module.is-revealed .specimen-analysis,
+.modules > .module.is-revealed .voice-analysis,
+.modules > .module.is-revealed .job-analysis {
+  animation-delay: 240ms;
+}
+
+/* Animate individual analysis items */
+.modules > .module.is-revealed .specimen-analysis li,
+.modules > .module.is-revealed .voice-analysis-list li,
+.modules > .module.is-revealed .job-analysis-list li {
+  animation: aikido-element-enter 550ms ease-out both;
+}
+
+.modules > .module.is-revealed li:nth-child(1) {
+  animation-delay: 280ms;
+}
+
+.modules > .module.is-revealed li:nth-child(2) {
+  animation-delay: 380ms;
+}
+
+.modules > .module.is-revealed li:nth-child(3) {
+  animation-delay: 480ms;
+}
+
+/* Keep elements completely stable for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .modules > .module.is-revealed .module-main,
+  .modules > .module.is-revealed .specimen,
+  .modules > .module.is-revealed .specimen-analysis,
+  .modules > .module.is-revealed .voice-analysis,
+  .modules > .module.is-revealed .job-analysis,
+  .modules > .module.is-revealed .takeaway,
+  .modules > .module.is-revealed .specimen-analysis li,
+  .modules > .module.is-revealed .voice-analysis-list li,
+  .modules > .module.is-revealed .job-analysis-list li {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   AI-KIDO — REPLAYABLE ELEMENT TRANSITIONS
+   ========================================== */
+
+/* Smooth animation for individual elements */
+@keyframes aikido-scroll-element {
+  from {
+    opacity: 0.35;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Disable older group animations that cause awkward movement */
+.modules > .module.is-revealed .module-main,
+.modules > .module.is-revealed .specimen,
+.modules > .module.is-revealed .takeaway,
+.modules > .module.is-revealed .specimen-analysis,
+.modules > .module.is-revealed .voice-analysis,
+.modules > .module.is-revealed .job-analysis,
+.modules > .module.is-revealed li:nth-child(1),
+.modules > .module.is-revealed li:nth-child(2),
+.modules > .module.is-revealed li:nth-child(3) {
+  animation: none !important;
+}
+
+/* Animate each element whenever it enters the screen */
+.modules > .module .scroll-visible,
+.modules > .module.is-revealed .scroll-visible,
+.reading-guide.scroll-visible {
+  animation: aikido-scroll-element 750ms ease-out both !important;
+}
+
+/* Disable transitions for reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .modules > .module .scroll-visible,
+  .modules > .module.is-revealed .scroll-visible,
+  .reading-guide.scroll-visible {
+    animation: none !important;
+  }
+}
