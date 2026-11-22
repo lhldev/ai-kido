@@ -246,7 +246,7 @@ reveals, no parallax, no autoplay. Honour `prefers-reduced-motion`.
 
 **Performance** — no framework, no build step. One shared CSS file (~28KB raw,
 ~5KB gzipped), one shared `app.js` under 4KB, three woff2 files (128KB), inline
-SVG favicon, zero image files. Deploys statically to Cloudflare Pages and Netlify
+SVG favicon, zero image files. Deploys statically to Cloudflare Workers and Netlify
 as-is. Pages are split so a reader only downloads the page they are on. Any
 interactive game code is page-only (`assets/game.js`, loaded by `/game` alone);
 do not add it to the shared `app.js`.
@@ -264,32 +264,36 @@ whitespace, never from elevation.
 ## 9. File layout
 
 ```
-index.html                      # / — hero, Exhibit A, contents index
-learn.html                      # /learn
-game/
-  index.html                    # /game — hub linking to the two standalone games
-  impersonation.html            # /game/impersonation — Game 01 (Deepfakes, Voice Clones, Personalised Scale)
-  forgeries.html                # /game/forgeries — Game 02 (Mirror Websites & Fake Documentation)
-about.html                      # /about
-colophon.html                   # /colophon
-privacy.html                    # /privacy
-netlify.toml                    # publish root, no build command
-assets/
-  styles.css                    # single stylesheet, tokens in :root
-  app.js                        # smooth scroll + header state only
-  game-impersonation.js         # loaded by /game/impersonation alone
-  game-forgeries.js             # loaded by /game/forgeries alone
-  audio/
-    clone-sister.mp3            # voice-clone specimen for Game 01 (Case 01)
-    clone-endorsement.mp3       # deepfake endorsement specimen for Game 01 (Case 03)
-    clone-amir.mp3              # video-call voice specimen for Game 01 (Case 04)
-  fonts/
-    fraunces-latin.woff2
-    instrument-sans-latin.woff2
-    jetbrains-mono-latin.woff2
-    OFL-fraunces.txt
-    OFL-instrumentsans.txt
-    OFL-jetbrainsmono.txt
+netlify.toml                    # publish public/, no build command
+public/                         # deploy root — everything served by the hosts
+  index.html                    # / — hero, Exhibit A, contents index
+  learn.html                    # /learn
+  game/
+    index.html                  # /game — hub linking to the two standalone games
+    impersonation.html          # /game/impersonation — Game 01 (Deepfakes, Voice Clones, Personalised Scale)
+    forgeries.html              # /game/forgeries — Game 02 (Mirror Websites & Fake Documentation)
+  about.html                    # /about
+  colophon.html                 # /colophon
+  privacy.html                  # /privacy
+  404.html                      # not-found page, served by both hosts
+  robots.txt                    # crawler rules, points at the sitemap
+  sitemap.xml                   # canonical URLs for the primary host
+  assets/
+    styles.css                  # single stylesheet, tokens in :root
+    app.js                      # smooth scroll + header state only
+    game-impersonation.js       # loaded by /game/impersonation alone
+    game-forgeries.js           # loaded by /game/forgeries alone
+    audio/
+      clone-sister.mp3          # voice-clone specimen for Game 01 (Case 01)
+      clone-endorsement.mp3     # deepfake endorsement specimen for Game 01 (Case 03)
+      clone-amir.mp3            # video-call voice specimen for Game 01 (Case 04)
+    fonts/
+      fraunces-latin.woff2
+      instrument-sans-latin.woff2
+      jetbrains-mono-latin.woff2
+      OFL-fraunces.txt
+      OFL-instrumentsans.txt
+      OFL-jetbrainsmono.txt
 ```
 
 The header and footer are duplicated in each HTML file because there is no build
