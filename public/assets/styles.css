@@ -3860,3 +3860,483 @@ h3 {
     animation: none !important;
   }
 }
+
+/* ==========================================
+   LESSON 01 — HOW AI SCAMS WORK
+   ========================================== */
+
+.specimen--ai-overview {
+  padding: clamp(22px, 3vw, 36px);
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+}
+
+.specimen--ai-overview h3 {
+  margin: 8px 0 28px;
+  color: var(--ink);
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.2;
+}
+
+.ai-scam-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 26px);
+}
+
+.ai-scam-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  padding-top: 18px;
+  border-top: 2px solid var(--ink);
+}
+
+.ai-scam-step-num {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--marker);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ai-scam-step strong {
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.ai-scam-step p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.specimen--ai-overview figcaption {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Stack the steps on smaller screens */
+@media (max-width: 700px) {
+  .ai-scam-steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ==========================================
+   LESSON 05 — DEEPFAKE VIDEO SPECIMEN
+   ========================================== */
+
+.specimen--deepfake {
+  padding: clamp(18px, 3vw, 32px);
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+}
+
+.deepfake-video {
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+}
+
+.deepfake-video-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #58524a;
+}
+
+.deepfake-video-label,
+.deepfake-video-type,
+.deepfake-video-warning {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+.deepfake-video-label,
+.deepfake-video-warning {
+  color: var(--marker);
+}
+
+.deepfake-video-type {
+  color: #d8d0c5;
+}
+
+.deepfake-video-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 270px;
+  padding: 36px 22px;
+  text-align: center;
+}
+
+.deepfake-play-icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--marker);
+  border-radius: 50%;
+  color: var(--marker);
+  font-size: 22px;
+  padding-left: 4px;
+}
+
+.deepfake-video-quote {
+  max-width: 35ch;
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.deepfake-video-warning {
+  text-align: center;
+}
+
+.deepfake-video-footer {
+  padding: 20px;
+  border-top: 1px solid #58524a;
+}
+
+.deepfake-video-footer strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--paper);
+  font-size: 16px;
+}
+
+.deepfake-video-footer p {
+  margin: 0;
+  color: #d8d0c5;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.specimen--deepfake figcaption {
+  margin-top: 14px;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .deepfake-video-screen {
+    min-height: 220px;
+    padding: 28px 16px;
+  }
+
+  .deepfake-video-header,
+  .deepfake-video-footer {
+    padding: 16px;
+  }
+}
+
+/* ==========================================
+   LESSON 05 — DEEPFAKE SPECIMEN ANALYSIS
+   ========================================== */
+
+.deepfake-analysis {
+  margin-top: 24px;
+  padding: clamp(24px, 3vw, 36px);
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+}
+
+.deepfake-analysis h3 {
+  margin: 8px 0 14px;
+  color: var(--ink);
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.25;
+}
+
+.deepfake-analysis-intro {
+  max-width: 75ch;
+  margin: 0 0 30px;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.deepfake-analysis-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: deepfake-warning;
+}
+
+.deepfake-analysis-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+  counter-increment: deepfake-warning;
+}
+
+.deepfake-analysis-list li::before {
+  content: counter(deepfake-warning, decimal-leading-zero);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: var(--marker);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.deepfake-analysis-list strong {
+  display: block;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.deepfake-analysis-list p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Yellow evidence quotations — added in the next step */
+.deepfake-analysis .analysis-evidence {
+  display: table;
+  margin: 10px 0 0;
+  padding: 3px 6px;
+  background: var(--marker);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+  .deepfake-analysis-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ==========================================
+   LESSON 06 — SAFETY COMPARISON
+   ========================================== */
+
+.specimen--protection {
+  padding: clamp(22px, 3vw, 36px);
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+}
+
+.specimen--protection h3 {
+  margin: 8px 0 28px;
+  color: var(--ink);
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.25;
+}
+
+.protection-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.protection-panel {
+  min-width: 0;
+  padding: clamp(18px, 2.5vw, 28px);
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  border-top-width: 4px;
+}
+
+.protection-panel--risky {
+  border-top-color: var(--stamp);
+}
+
+.protection-panel--safe {
+  border-top-color: #15524f;
+}
+
+.protection-panel h4 {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.protection-panel--risky h4 {
+  color: var(--stamp);
+}
+
+.protection-panel--safe h4 {
+  color: #15524f;
+}
+
+.protection-panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.protection-panel li {
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.protection-panel li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.protection-panel li:last-child {
+  padding-bottom: 0;
+}
+
+.specimen--protection figcaption {
+  margin-top: 24px;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .protection-comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   AI-KIDO — FIVE LEARNING STAGES
+   ========================================== */
+
+.lesson-stage {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 12px;
+  color: var(--stamp);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+}
+
+.lesson-stage-num {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--marker);
+  color: var(--ink);
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+@media (max-width: 600px) {
+  .lesson-stage {
+    font-size: 11px;
+    gap: 8px;
+  }
+}
+
+/* ==========================================
+   LEARN PAGE — RESPONSIVE ZOOM FIX
+   ========================================== */
+
+/* Prevent content from forcing grid columns wider */
+.modules,
+.module,
+.module-body,
+.module-main {
+  min-width: 0;
+}
+
+/* Allow long words, links and messages to wrap */
+.module-body,
+.specimen,
+.specimen-analysis,
+.voice-analysis,
+.job-analysis,
+.deepfake-analysis {
+  overflow-wrap: anywhere;
+}
+
+/* Switch complex lesson layouts before they get cramped */
+@media (max-width: 1100px) {
+  .module--feature .module-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .module--feature .voice-analysis {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ==========================================
+   LESSON 03 — ZOOM & LAYOUT FIX
+   ========================================== */
+
+@media (max-width: 1450px) {
+  .module--feature .module-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .module--feature .module-body > * {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  .module--feature .specimen--voice {
+    width: 100%;
+    max-width: 64ch;
+    margin-top: 1rem;
+  }
+
+  .module--feature .voice-analysis {
+    grid-column: 1 / -1;
+    margin-top: 1.5rem;
+  }
+}

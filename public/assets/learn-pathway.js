@@ -145,17 +145,19 @@ button: "Verify Account"
       ]
     },
 
-    older: {
-      sender: "Home Career Recruitment",
-      handle: "@home.career.example",
-      message:
-        "Hello! We are offering flexible work-from-home opportunities. Earn RM3,000 monthly for simple online tasks. To activate your position, pay a RM60 processing fee first. Offer closes today!",
-      highlights: [
-        "Earn RM3,000 monthly",
-        "pay a RM60 processing fee",
-        "Offer closes today"
-      ]
-    }
+    
+older: {
+  sender: "Investment Opportunity Centre",
+  handle: "@investment.offer.example",
+  message:
+    "Good afternoon! You've been invited to join an exclusive investment programme. Earn guaranteed returns of 20% every month with zero risk. Start with just RM500 to activate your investment account. Limited places available — join today!",
+  highlights: [
+    "guaranteed returns of 20% every month",
+    "Start with just RM500",
+    "Limited places available"
+  ]
+}
+
   };
 
 
@@ -164,6 +166,110 @@ button: "Verify Account"
     const content = jobContent[pathway];
 
     if (!content) return;
+
+    // Personalize Lesson 04's explanation and warning signs.
+    const lessonText = {
+      student: {
+        description:
+          "Fake job offers often arrive through social media or messaging apps. Scammers promise easy work and high earnings, then request an upfront payment or access to your bank account.",
+        flags: [
+          ["Pay a registration fee", " before you can start working."],
+          ["Unverified recruiters", " contact you through messaging apps without providing legitimate company details."],
+          ["Urgent job offers", " pressure you to accept without checking the employer."]
+        ]
+      },
+
+      older: {
+        description:
+          "Investment scams may promise unusually high profits with little or no risk. Scammers impersonate financial organizations and pressure people to transfer money before verifying whether the opportunity is genuine.",
+        flags: [
+          ["Guaranteed high returns", " with little or no investment risk."],
+          ["Unverified investment companies", " provide no reliable evidence of their legitimacy."],
+          ["Pressure to invest immediately", " before you can independently check the offer."]
+        ]
+      }
+    };
+
+    const selectedLesson = lessonText[pathway];
+    const description = document.getElementById("job-description");
+    const flags = document.querySelectorAll("#job-flags li");
+
+    if (selectedLesson) {
+      if (description) {
+        description.textContent = selectedLesson.description;
+      }
+
+      flags.forEach((flag, index) => {
+        const parts = selectedLesson.flags[index];
+        if (!parts) return;
+
+        const mark = document.createElement("mark");
+        mark.textContent = parts[0];
+
+        flag.replaceChildren(
+          mark,
+          document.createTextNode(parts[1])
+        );
+      });
+
+    // Update Lesson 04's safety advice and analysis.
+    const safetyContent = {
+      student: {
+        check:
+          "Never pay to start a job. Verify the employer and never lend your bank account to someone else.",
+        explanations: [
+          "Unusually high earnings for simple tasks should be verified independently.",
+          "Legitimate employers should not require an upfront payment to secure a job.",
+          "Pressure to apply immediately can stop you from checking whether the employer is genuine."
+        ]
+      },
+
+      older: {
+        check:
+          "Never invest based on guaranteed-return claims. Verify the company independently before transferring money.",
+        explanations: [
+          "Promises of guaranteed high returns with zero risk are a major investment scam warning sign.",
+          "Requests to transfer an initial deposit to an unverified organization can put your savings at risk.",
+          "Limited-time investment offers pressure you to send money before checking the facts."
+        ]
+      }
+    };
+
+    const safety = safetyContent[pathway];
+
+    if (safety) {
+      const takeaway = document.querySelector(
+        "#lesson-job .takeaway"
+      );
+
+      if (takeaway) {
+        const label = takeaway.querySelector(".takeaway-label");
+        takeaway.replaceChildren();
+
+        if (label) {
+          takeaway.appendChild(label);
+        }
+
+        takeaway.appendChild(
+          document.createTextNode(" " + safety.check)
+        );
+      }
+
+      const analysisItems = document.querySelectorAll(
+        ".job-analysis-list li"
+      );
+
+      analysisItems.forEach((item, index) => {
+        const explanation = item.querySelector("p");
+
+        if (explanation && safety.explanations[index]) {
+          explanation.textContent = safety.explanations[index];
+        }
+      });
+    }
+
+    }
+
 
     const sender = document.getElementById("job-sender");
     const handle = document.getElementById("job-handle");
@@ -220,6 +326,21 @@ button: "Verify Account"
     message.replaceChildren(...nodes);
 
     // Match each analysis point to highlighted evidence.
+
+    // Match analysis headings to the selected pathway.
+    const analysisTitles = {
+      student: [
+        "Unverified earnings",
+        "Upfront payment",
+        "Artificial urgency"
+      ],
+      older: [
+        "Unrealistic returns",
+        "Suspicious investment deposit",
+        "Pressure to invest"
+      ]
+    };
+
     const analysisHeadings = document.querySelectorAll(
       ".job-analysis-list li strong"
     );
@@ -231,6 +352,7 @@ button: "Verify Account"
     analysisHeadings.forEach((heading, index) => {
       // Remove the previous quote when switching pathways.
       heading.querySelector(".analysis-evidence")?.remove();
+      heading.textContent = analysisTitles[pathway][index];
 
       const phrase = highlightedPhrases[index];
       if (!phrase) return;
@@ -243,6 +365,290 @@ button: "Verify Account"
     });
 
   }
+
+function updateAiScamLesson(pathway) {
+  const steps = document.querySelectorAll(
+    "#lesson-ai-scam .ai-scam-step p"
+  );
+
+  const examples = {
+    student: [
+      "A fake account pretends to be a classmate or influencer.",
+      "A limited-time giveaway creates pressure to act quickly.",
+      "The scammer asks for your password, OTP, or money."
+    ],
+
+    older: [
+      "A message or voice pretends to be a family member or bank.",
+      "A fake emergency or account warning creates urgency.",
+      "The scammer asks for banking details, security codes, or money."
+    ]
+  };
+
+  if (!examples[pathway] || steps.length !== 3) {
+    return;
+  }
+
+  steps.forEach((step, index) => {
+    step.textContent = examples[pathway][index];
+  });
+}
+
+function updateDeepfakeLesson(pathway) {
+  const content = {
+    student: {
+      description:
+        "Deepfake videos use AI to make creators appear to say things they never said. Scammers may use fake influencer giveaways to steal your login details.",
+      account: "Gaming Creator Giveaway",
+      type: "Influencer giveaway",
+      quote:
+        "I'm giving away 500 limited-edition skins! Tap the link in my bio and log in to claim!",
+      caption:
+        "An unverified giveaway asks viewers to visit a link and enter their account details."
+    },
+
+    older: {
+      description:
+        "Deepfake videos can make trusted experts or public figures appear to endorse investments they never supported. Scammers use these clips to encourage risky financial decisions.",
+      account: "Investment News Update",
+      type: "Investment endorsement",
+      quote:
+        "This government-backed investment guarantees high returns with zero risk. Join now!",
+      caption:
+        "An unverified investment video promises guaranteed returns and pressures viewers to act."
+    }
+  };
+
+  const selected = content[pathway];
+
+  if (!selected) return;
+
+  document.getElementById("deepfake-description").textContent =
+    selected.description;
+
+  document.getElementById("deepfake-account").textContent =
+    selected.account;
+
+  document.getElementById("deepfake-type").textContent =
+    selected.type;
+
+  
+const quoteElement = document.getElementById("deepfake-quote");
+
+const highlightPhrases = {
+  student: [
+    "500 limited-edition skins",
+    "log in to claim"
+  ],
+  older: [
+    "guarantees high returns with zero risk",
+    "Join now"
+  ]
+};
+
+const phrases = highlightPhrases[pathway] || [];
+const text = selected.quote;
+const parts = [];
+let position = 0;
+
+while (position < text.length) {
+  const matches = phrases
+    .map((phrase) => ({
+      phrase,
+      index: text.indexOf(phrase, position)
+    }))
+    .filter((match) => match.index !== -1)
+    .sort((a, b) => a.index - b.index);
+
+  if (matches.length === 0) {
+    parts.push(document.createTextNode(text.slice(position)));
+    break;
+  }
+
+  const match = matches[0];
+
+  parts.push(
+    document.createTextNode(text.slice(position, match.index))
+  );
+
+  const mark = document.createElement("mark");
+  mark.textContent = match.phrase;
+  parts.push(mark);
+
+  position = match.index + match.phrase.length;
+}
+
+quoteElement.replaceChildren(...parts);
+
+
+  document.getElementById("deepfake-caption").textContent =
+    selected.caption;
+
+  // Evidence quotes matching the selected pathway.
+  const evidence = {
+    student: [
+      "500 limited-edition skins",
+      "Check the lip-sync and lighting",
+      "log in to claim"
+    ],
+    older: [
+      "guarantees high returns with zero risk",
+      "Check the face, voice and lighting",
+      "Join now"
+    ]
+  };
+
+  const analysisHeadings = document.querySelectorAll(
+    ".deepfake-analysis-list li strong"
+  );
+
+  analysisHeadings.forEach((heading, index) => {
+    // Remove the previous pathway's quote.
+    heading.querySelector(".analysis-evidence")?.remove();
+
+    const quote = document.createElement("span");
+    quote.className = "analysis-evidence";
+    quote.textContent = `“${evidence[pathway][index]}”`;
+
+    heading.appendChild(quote);
+  });
+}
+function updateProtectionLesson(pathway) {
+  const content = {
+    student: {
+      description:
+        "Protecting yourself online means building simple habits that keep your accounts, money, and identity safe.",
+      flags: [
+        "Unexpected login alerts may mean someone is trying to access your account.",
+        "Never share passwords, one-time codes, or school login details.",
+        "Be cautious of suspicious links and messages that pressure you to act immediately."
+      ],
+      check:
+        "Use unique passwords, turn on 2FA, and verify links before clicking.",
+      guideTitle: "Small habits. Stronger protection.",
+      riskyTitle: "✕ Risky habits",
+      safeTitle: "✓ Safer habits",
+      risky: [
+        "Reusing the same password everywhere",
+        "Sharing verification codes",
+        "Clicking unfamiliar links from messages"
+      ],
+      safe: [
+        "Using unique passwords and enabling 2FA",
+        "Keeping verification codes private",
+        "Opening official websites independently"
+      ]
+    },
+
+    older: {
+      description:
+        "You don't need to be a technology expert to stay safe online. Simple habits can help protect your money, accounts, and personal information.",
+      flags: [
+        "Be cautious when someone pressures you to act immediately or keep a secret.",
+        "Never share banking PINs, verification codes, or allow unexpected remote access.",
+        "Verify unexpected calls or messages asking for money, even if the person sounds familiar."
+      ],
+      check:
+        "Pause, contact a trusted person or organization using a number you find yourself, and keep security details private.",
+      guideTitle: "Pause. Verify. Protect.",
+      riskyTitle: "✕ What to avoid",
+      safeTitle: "✓ What to do",
+      risky: [
+        "Responding immediately to urgent messages",
+        "Calling the number provided in a suspicious message",
+        "Sharing passwords, security codes, or banking details"
+      ],
+      safe: [
+        "Pause before responding to pressure",
+        "Verify using an independently found official number",
+        "Protect your security codes and financial information"
+      ]
+    }
+  };
+
+  const selected = content[pathway];
+  if (!selected) return;
+
+  document.getElementById("protection-description").textContent =
+    selected.description;
+
+  const flags = document.querySelectorAll("#protection-flags li");
+
+  
+const protectionHighlights = {
+  student: [
+    "Unexpected login alerts",
+    "Never share passwords",
+    "suspicious links"
+  ],
+  older: [
+    "act immediately",
+    "banking PINs",
+    "asking for money"
+  ]
+};
+
+flags.forEach((flag, index) => {
+  const text = selected.flags[index];
+  const phrase = protectionHighlights[pathway][index];
+  const start = text.toLowerCase().indexOf(
+    phrase.toLowerCase()
+  );
+
+  if (start === -1) {
+    flag.textContent = text;
+    return;
+  }
+
+  const mark = document.createElement("mark");
+  mark.textContent = text.slice(start, start + phrase.length);
+
+  flag.replaceChildren(
+    document.createTextNode(text.slice(0, start)),
+    mark,
+    document.createTextNode(text.slice(start + phrase.length))
+  );
+});
+
+
+  const takeaway = document.getElementById("protection-takeaway");
+
+  takeaway.replaceChildren();
+
+  const label = document.createElement("span");
+  label.className = "takeaway-label";
+  label.textContent = "The check";
+
+  takeaway.append(label, document.createTextNode(" " + selected.check));
+
+  document.getElementById("protection-guide-title").textContent =
+    selected.guideTitle;
+
+  document.getElementById("protection-risky-title").textContent =
+    selected.riskyTitle;
+
+  document.getElementById("protection-safe-title").textContent =
+    selected.safeTitle;
+
+  const riskyItems = document.querySelectorAll(
+    "#protection-risky-list li"
+  );
+
+  const safeItems = document.querySelectorAll(
+    "#protection-safe-list li"
+  );
+
+  riskyItems.forEach((item, index) => {
+    item.textContent = selected.risky[index];
+  });
+
+  safeItems.forEach((item, index) => {
+    item.textContent = selected.safe[index];
+  });
+}
+
+
+
 
 
   function updateVoiceLesson(pathway) {
@@ -455,6 +861,9 @@ highlightText(link, content.link);
     updatePhishingLesson(savedPathway);
     updateVoiceLesson(savedPathway);
     updateJobLesson(savedPathway);
+    updateAiScamLesson(savedPathway);
+    updateDeepfakeLesson(savedPathway);
+    updateProtectionLesson(savedPathway);
   }
   updateNavPathway(localStorage.getItem(storageKey));
 
@@ -478,6 +887,9 @@ if (pathway === "skipped") {
     updatePhishingLesson(pathway);
     updateVoiceLesson(pathway);
     updateJobLesson(pathway);
+    updateAiScamLesson(pathway);
+    updateDeepfakeLesson(pathway);
+    updateProtectionLesson(pathway);
     updateNavPathway(pathway);
 
     // Return to the top after changing learning pathways.
